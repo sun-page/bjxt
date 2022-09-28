@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+<link rel="stylesheet" href="../../css/coom.css">
+<body>
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend><h1 align="center">第一次练习</h1></legend>
+  </fieldset> 
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>任务</legend>
+            <legend><a href="../../wj/javam.zip">点击下载源文件</a>|<a href="../../wj/zy.zip">点击下载pdf</a></legend>
+          </fieldset>
+
+1
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>（1） 编写一个Java程序，定义两个整型变量分别表示一个三角形的底和高，并赋值，再定义一个表示面积的变量，通过数学运算求出三角形的面积并输出它的值。</b></div>
+          </blockquote>
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-panel">
+                  <div style="padding: 10px 10px;">
+                <pre>
+                    public class One {
+                        public static void main(String[] args) {
+                            int a = 3;
+                            int h = 3;
+                            float s = (float)a*h/2;
+                            System.out.println("定义三角形的高为3，底边为3");
+                            System.out.println("三角形面积为"+s);
+                        }
+                    }
+</pre>
+                </div>
+                </div>   
+            </div> 
+          </div>
+
+
+
+2
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>编写一个Java程序，定义合适的变量类型并以自己的个人信息赋值后，按格式输出。</b></div>
+</blockquote>
+            <div class="layui-bg-gray" style="padding: 30px;">
+                <div class="layui-row layui-col-space15">
+                    <div class="layui-panel">
+                        <div style="padding: 10px 10px;">
+                    <pre>
+                        public class Second {
+                            public static void main(String[] args) {
+                                long num = 2022010120000L;
+                                String clas = "zb计科223";
+                                String name = "张三";
+                                int age = 19;
+                                char sex = '男';
+                                System.out.println("学号："+num + "\n" + "班级：" + clas + "\n" + "姓名：" + name + "\n" + "年龄：" + age + "\n" + "性别：" + sex );
+                            }
+                        }                        
+                    </pre>
+                        </div>
+                    </div>   
+                </div> 
+            </div>
+
+3
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+    <div class="box"><b>编写一个Java程序，定义两个float型变量并通过键盘输入它们的值，设计程序将两个变量的值交换，并按格式输出。</b></div>
+  </blockquote>
+              <div class="layui-bg-gray" style="padding: 30px;">
+                  <div class="layui-row layui-col-space15">
+                      <div class="layui-panel">
+                          <div style="padding: 10px 10px;">
+                      <pre>
+                        import java.util.Scanner;
+                        public class Third {
+                        public static void main(String[] args) {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.print("请输入第一个数字：");
+                            double a = sc.nextDouble();
+                            System.out.print("请输入第二个数字：");
+                            double b = sc.nextDouble();
+                            System.out.println("交换前a="+a+"  b="+b);
+                            double d;
+                            d = a;
+                            a = b;
+                            b = d;
+                            System.out.print("交换后a="+a + "  b="+b);
+                            }
+                        }
+                      </pre>
+                          </div>
+                      </div>   
+                  </div> 
+              </div>
+  
+
+4
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+    <div class="box"><b>编写一个Java程序，定义一个字符‘A’，打印输出其对应数字。然后将这个数字加上32，打印输出其加32后对应的字符。</b></div>
+  </blockquote>
+              <div class="layui-bg-gray" style="padding: 30px;">
+                  <div class="layui-row layui-col-space15">
+                      <div class="layui-panel">
+                          <div style="padding: 10px 10px;">
+                      <pre>
+                        public class Fourth {
+                        public static void main(String[] args) {
+                            char a ='A';
+                            int b = (int)a;
+                            System.out.println(b);
+                            char m = (char)(a+32);
+                            System.out.println(m);
+                            }
+                        }
+                      </pre>
+                          </div>
+                      </div>   
+                  </div> 
+              </div>
+  
+
+5
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+    <div class="box"><b>编写程序，从键盘输入一个两位数，按数位逆序输出。提示：使用""和"/"运算求出每一个位置上的数字。</b></div>
+  </blockquote>
+              <div class="layui-bg-gray" style="padding: 30px;">
+                  <div class="layui-row layui-col-space15">
+                      <div class="layui-panel">
+                          <div style="padding: 10px 10px;">
+                      <pre>
+                        import java.util.Scanner;
+                        public class Fifth {
+                        public static void main(String[] args) {
+                            Scanner sc = new Scanner(System.in);
+                            System.out.print("请输入一个两位整数：");
+                            int a = sc.nextInt();
+                            int x ,g,s;
+                            g = a%10;
+                            s = a/10;
+                            x = g*10+s;
+                            System.out.println(x);
+                            }
+                        }
+                      </pre>
+                          </div>
+                      </div>   
+                  </div> 
+              </div>
+  
+
+
+
+
+</body>
+
+</html>

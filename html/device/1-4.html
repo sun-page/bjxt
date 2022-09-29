@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+<link rel="stylesheet" href="../../css/coom.css">
+<body>
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend><h1 align="center">第四章</h1></legend>
+  </fieldset> 
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>当前</legend>
+          </fieldset>
+
+1
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>数据库安装</b></div>
+          </blockquote>
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-panel">
+                  <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>mysql -install </b></div>
+                </div>   
+            </div> 
+          </div>
+
+
+
+2
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>数数据库卸载</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>mysql -remove </b></div>
+      </div>   
+  </div> 
+</div>
+
+3
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>数据库初始化</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>mysql --initialize-insecure </b></div>
+      </div>   
+  </div> 
+</div>
+
+
+4
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>数据库启动</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>net start mysql;</b></div>
+      </div>   
+  </div> 
+</div>
+
+5
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>数据库停止</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>net stop mysql;</b></div>
+      </div>   
+  </div> 
+</div>
+
+6
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>登录数据库</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>mysql -h localhost -u root -p ****; </b></div>
+      </div>   
+  </div> 
+</div>
+
+7
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>用户设置密码</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>alter user '<span title="用户名">root</span>' @ '<span title="当前主机中的root用户">localhost</span>' identified by '<span title="需要设置的密码，若不需要密码可以为空">****</span>';</b></div>
+      </div>   
+  </div> 
+</div>
+
+
+
+</body>
+
+</html>

@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="../../css/coom.css">
 <body>
   <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-    <legend><h1 align="center">第五章</h1></legend>
+    <legend><h1 align="center">第五章单表操作</h1></legend>
   </fieldset> 
           <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
             <legend>数据操作</legend>
@@ -57,51 +57,129 @@
 
 4
 <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>数据库启动</b></div>
+  <div class="box"><b>主键冲突替换</b></div>
 </blockquote>
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
-        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>net start mysql;</b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>replace [into] 数据表名 [(字段列表)] {values|value} (值列表) [,(值列表)]...;</b></div>
       </div>   
   </div> 
 </div>
 
 5
 <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>数据库停止</b></div>
+  <div class="box"><b>清空数据</b></div>
 </blockquote>
+
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
       <div class="layui-panel">
-        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>net stop mysql;</b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>truncate [table] 表名;</b></div>
+        <pre>          <b>delete from 表名;</b></pre>
       </div>   
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-panel">
+        <div style="padding: 0px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;两个语句区别</div>
+        <pre>            <b>实现方法不同</b>
+            <b>执行效率</b>
+            <b>对自增字段影响</b>
+            <b>删除数据范围</b>
+            <b>返回值不同</b>
+        </pre>
+
+      </div>   
+    </div>
   </div> 
 </div>
 
 6
 <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>登录数据库</b></div>
+  <div class="box"><b>去除重复记录</b></div>
 </blockquote>
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
-        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>mysql -h localhost -u root -p ****; </b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select (all|distinct) 字段列表 from 数据表; </b></div>
       </div>   
   </div> 
 </div>
 
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend>排序与限量 order by.limit</legend>
+</fieldset>
+
 7
 <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>用户设置密码</b></div>
+  <div class="box"><b>单字段排序</b></div>
 </blockquote>
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
-        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>alter user '<span title="用户名">root</span>' @ '<span title="当前主机中的root用户">localhost</span>' identified by '<span title="需要设置的密码，若不需要密码可以为空">****</span>';</b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select * | {字段列表} from 数据表名 order by 字段名 [<span title="升序">asc</span> | <span title="降序">desc</span>];</b></div>
       </div>   
   </div> 
 </div>
+
+8
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>多字段排序</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select * | {字段列表} from 数据表名 order by 字段名1 [<span title="升序">asc</span> | <span title="降序">desc</span>] [,字段名2 [<span title="升序">asc</span> | <span title="降序">desc</span>]]···;</b></div>
+      </div>   
+  </div> 
+</div>
+
+
+9
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>多字段排序</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [ select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  [ order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span>] limit [ <span title="表示从那一条字段开始">offset</span> , ] 记录数;</b></div>
+      </div>   
+  </div> 
+</div>
+
+
+10
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>排序后限量更新或删除数据</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">## 数据更新的排序限量&nbsp;&nbsp;&nbsp;&nbsp;<b>update 数据表名 set 字段=新值,···  [ where 条件表达式 ]  order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span> limit  记录数;</b></div>
+        <div style="padding: 10px 10px;">## 数据删除的排序限量&nbsp;&nbsp;&nbsp;&nbsp;<b>delete from 数据表名  [ where 条件表达式 ]  order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span> limit  记录数;</b></div>
+
+      </div>   
+  </div> 
+</div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend>分组与聚合函数</legend>
+</fieldset>
+
+11
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>多字段排序</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [ select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  [ order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span>] limit [ <span title="表示从那一条字段开始">offset</span> , ] 记录数;</b></div>
+      </div>   
+  </div> 
+</div>
+
 
 
 

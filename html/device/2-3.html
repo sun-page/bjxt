@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+<link rel="stylesheet" href="../../css/coom.css">
+<body>
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend><h1 align="center">运算符</h1><a href="03总结.txt">本章总结</a></legend>
+  </fieldset> 
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>算术运算符</legend>
+          </fieldset>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    运算符：
+                        就是对常量和变量进行操作的符号。
+                    
+                    分类：算术运算符，赋值运算符，比较运算符，逻辑运算符，位运算符，三目运算符
+            
+                    算术运算符：+, -, *, /, %, ++, --
+                    
+                    注意：
+                        1.整数相除只能得到整数。如果想得到小数，必须把数据变化为浮点数类型
+                        2./获取的是商，%获取的是余数
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                        class OperatorDemo {
+                            public static void main(String[] args) {
+                                //定义变量
+                                int x = 3;  //把3赋值给int类型的变量x
+                                int y = 4;
+                                
+                                System.out.println(x + y);
+                                System.out.println(x - y);
+                                System.out.println(x * y);
+                                System.out.println(x / y); //整数相除只能得到整数
+                                
+                                //想得到浮点数，可以把任意的一个操作数变为浮点数
+                                System.out.println(x * 1.0 / y);
+                                
+                                //%的应用
+                                System.out.println(x % y); //得到的是余数
+                            }
+                        }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>    
+
+            <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    ++,--运算符：
+                        单独使用：
+                                放在操作数的前面和后面效果一样。
+                        参与运算使用：
+                                放在操作数的前面，先自增或者自减，再参与运算。
+                                放在操作数的后面，先参与运算，再自增或者自减。
+                        
+                    作用：对变量进行自增1或者自减1。
+                    注意：常量不能使用++和--
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                        class OperatorDemo2 {
+                            public static void main(String[] args) {
+                                //定义两个变量
+                                int x = 3;
+                                int y = 4;
+                                
+                                //字符串的拼接
+                                //System.out.println("x:"+x);
+                                //System.out.println("y:"+y);
+                                
+                                System.out.println("x:"+x+",y:"+y);
+                                
+                                //单独使用
+                                //x++;
+                                //y--;
+                                ++x;
+                                --y;
+                                //System.out.println(x);
+                                System.out.println("x:"+x+",y:"+y);
+                                
+                                //常量是不可以这样做
+                                //System.out.println(10++);
+                                
+                                System.out.println("-------------------");
+                                //参与运算使用
+                                int a = 3;
+                                int b = 4;
+                                
+                                //int c = a++;
+                                //int d = b--;
+                                
+                                int c = ++a;
+                                int d = --b;
+                                
+                                System.out.println("a:"+a); //4, 4
+                                System.out.println("b:"+b); //3, 3
+                                System.out.println("c:"+c); //3, 4
+                                System.out.println("d:"+d); //4, 3
+                            }
+                    }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+            </div>
+<hr>
+            <div class="layui-bg-gray" style="padding: 30px;">
+                <div class="layui-row layui-col-space15">
+                  <div class="layui-col-md6">
+                    <div class="layui-panel">
+                      <pre>
+                        +的用法：
+                            1.加法
+                            2.正号
+                            3.字符串连接符
+                      </pre>
+                    </div>   
+                  </div>
+                  <div class="layui-col-md6">
+                    <div class="layui-panel">
+                        <pre>
+                            class OperatorDemo3 {
+                                public static void main(String[] args) {
+                                    //加法
+                                    System.out.println(3+4);
+                                    
+                                    //正号
+                                    System.out.println(+4);
+                                    
+                                    System.out.println('a');
+                                    System.out.println('a'+1); //加法
+                                    
+                                    //字符串连接符
+                                    System.out.println("hello"+'a'+1);
+                                    System.out.println('a'+1+"hello");
+                                }
+                            }
+                        </pre>
+                    </div>   
+                  </div>
+                </div> 
+                </div>
+
+练习
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">练习</div>
+          <div class="layui-card-body">
+            <pre>
+                ++,--的练习题
+	
+                第一题：
+                int a = 10;
+                int b = 10;
+                int c = 10;
+            
+                a = b++;
+                c = --a;
+                b = ++a;
+                a = c--;
+                请分别计算出a,b,c的值
+                
+                第二题：
+                int x = 4;
+                int y = (x++)+(++x)+(x*10);
+                请分别计算出x,y的值
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">答案</div>
+          <div class="layui-card-body">
+            <pre>
+                class OperatorTest {
+                    public static void main(String[] args) {
+                        int a = 10;
+                        int b = 10;
+                        int c = 10;
+                
+                        a = b++;                //a=10,b=11,c=10
+                        c = --a;                   //a=9,b=11,c=9
+                        b = ++a;                //a=10,b=10,c=9
+                        a = c--;                  //a=9,b=10,c=8
+                        
+                        System.out.println("a:"+a);
+                        System.out.println("b:"+b);
+                        System.out.println("c:"+c);
+                        System.out.println("--------------");
+                        
+                        int x = 4;
+                        int y = (x++)+(++x)+(x*10);
+                        //4+6+60
+                        //x=5,6
+                        
+                        System.out.println("x:"+x);
+                        System.out.println("y:"+y);
+                    }
+                }
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>赋值运算符</legend>
+  </fieldset>
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+          <pre>
+            赋值运算符：
+            基本的赋值运算符：=
+                把=右边的数据赋值给左边。
+                
+            扩展的赋值运算符：+=, -=, *=, /=, %=
+                += 把左边和右边做加法，然后赋值给左边。
+          </pre>
+        </div>   
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+            <pre>
+                class OperatorDemo {
+                    public static void main(String[] args) {
+                        //定义一个变量
+                        int x = 10;
+                        
+                        //其他用法
+                        int a,b; 
+                        a = b = 10;
+                        System.out.println(a); 
+                        System.out.println(b);
+                        System.out.println("-----------");
+                
+                        //定义一个变量
+                        int y = 10;
+                        
+                        y += 20;
+                        
+                        System.out.println(y);
+                        
+                    }
+                }
+            </pre>
+        </div>   
+      </div>
+    </div> 
+  </div>
+
+<hr>    
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">练习</div>
+          <div class="layui-card-body">
+            <pre>
+                short s = 1; s = s + 1; 
+                short s = 1; s += 1;
+                上面两个代码有没有问题，如果有，那里有问题。
+                
+                第一个编译不通过：s是short类型，1是int类型，s+1是int类型（自动转换），等号左边的s是short类型
+                              s+1→s要强制转换而第一个式子没有
+                第二个没有问题：
+                    扩展的赋值运算符其实隐含了一个强制类型转换。
+                    
+                    s += 1;
+                    不是等价于 s = s + 1;
+                    而是等价于 s = (s的数据类型)(s + 1);
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">答案</div>
+          <div class="layui-card-body">
+            <pre>
+                class OperatorTest {
+                    public static void main(String[] args) {
+                        //short s = 1;
+                        //s = s + 1;
+                        //System.out.println(s);
+                        
+                        short s = 1;
+                        s += 1; //好像是 s = s + 1;
+                        System.out.println(s);
+                    }
+                }
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>比较运算符</legend>
+  </fieldset>
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+          <pre>
+            比较运算符：
+                ==, !=, >, >=, <, <=
+            
+            特点：
+                结果是boolean类型。
+            
+            注意事项：
+                "=="不能写成"="。
+          </pre>
+        </div>   
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+            <pre>
+                class OperatorDemo {
+                    public static void main(String[] args) {
+                        int x = 3;
+                        int y = 4;
+                        int z = 3;
+                    
+                        System.out.println(x == y);
+                        System.out.println(x == z);
+                        System.out.println((x+y) == (x+z));
+                        System.out.println("------------");
+                        
+                        System.out.println(x != y);
+                        System.out.println(x > y);
+                        System.out.println(x >= y);
+                        System.out.println(x < y);
+                        System.out.println(x <= y);
+                        System.out.println("------------");
+                        
+                        int a = 10;
+                        int b = 20;
+                        int c = (a = b); 	//20
+                        System.out.println(c);
+                    }
+                }
+            </pre>
+        </div>   
+      </div>
+    </div> 
+  </div>
+
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>逻辑运算符</legend>
+  </fieldset>
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+          <pre>
+            逻辑运算符：
+                &, |, ^, !
+                &&, ||
+            
+            作用：连接boolean类型的表达式或值。
+                
+            表达式：用运算符把常量或者变量连接起来
+                算术表达式：a + b
+                比较表达式：a == b
+                
+            说明：
+                & 逻辑与:有false则false。
+                | 逻辑或:有true则true。
+                ^ 逻辑异或:相同为false，不同为true。
+                ! 逻辑非:非false则true，非true则false。
+                    特点：偶数个不改变本身。
+          </pre>
+        </div>   
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+            <pre>
+                class OperatorDemo {
+                    public static void main(String[] args) {
+                        int a = 3;
+                        int b = 4;
+                        int c = 5;
+                        
+                        //&逻辑与
+                        System.out.println((a > b) & (a > c)); //false & false = false
+                        System.out.println((a > b) & (a < c)); //false & true = false
+                        System.out.println((a < b) & (a > c)); //true & false = false
+                        System.out.println((a < b) & (a < c)); //true & true = true
+                        System.out.println("---------------");
+                        
+                        //|逻辑或
+                        System.out.println((a > b) | (a > c)); //false | false = false
+                        System.out.println((a > b) | (a < c)); //false | true = true
+                        System.out.println((a < b) | (a > c)); //true | false = true
+                        System.out.println((a < b) | (a < c)); //true | true = true
+                        System.out.println("---------------");
+                        
+                        //^逻辑异或
+                        System.out.println((a > b) ^ (a > c)); //false ^ false = false
+                        System.out.println((a > b) ^ (a < c)); //false ^ true = true
+                        System.out.println((a < b) ^ (a > c)); //true ^ false = true
+                        System.out.println((a < b) ^ (a < c)); //true ^ true = false
+                        System.out.println("---------------");
+                        
+                        //!逻辑非
+                        System.out.println(!(a > b)); //!false = true
+                        System.out.println(!(a < b)); //!true = false
+                        System.out.println(!!(a > b)); //!!false = false
+                        System.out.println(!!!(a > b)); //!!false = true
+                    }
+                }
+            </pre>
+        </div>   
+      </div>
+    </div> 
+  </div>
+
+<hr>
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+          <pre>
+            &&和&的区别?||和|的区别?
+                1.结果一样。
+                2. && 和 || 具有短路效果
+                    && ——左边是false右边就不检查，&——两边都要检查
+                    || ——左边是true右边就不检查，|——两边都要检查
+            
+            开发中常用的逻辑运算符：
+                &&, ||, !
+          </pre>
+        </div>   
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+            <pre>
+                class OperatorDemo2 {
+                    public static void main(String[] args) {
+                        int a = 3;
+                        int b = 4;
+                        int c = 5;
+                        
+                        //&&双与
+                        System.out.println((a > b) && (a > c)); //false && false = false
+                        System.out.println((a > b) && (a < c)); //false && true = false
+                        System.out.println((a < b) && (a > c)); //true && false = false
+                        System.out.println((a < b) && (a < c)); //true && true = true
+                        System.out.println("----------------");
+                        
+                        int x = 3;
+                        int y = 4;
+                        
+                        //boolean b1 = ((x++ == 3) & (y++ == 4));
+                        //boolean b1 = ((x++ == 3) && (y++ == 4));
+                        //boolean b1 = ((++x == 3) & (y++ == 4));
+                        boolean b1 = ((++x == 3) && (y++ == 4));
+                        System.out.println("x:"+x);
+                        System.out.println("y:"+y);
+                        System.out.println(b1);
+                    }
+                }
+            </pre>
+        </div>   
+      </div>
+    </div> 
+  </div>
+
+
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+    <legend>位运算符</legend>
+  </fieldset>
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+          <pre>
+            位运算符：
+		        &, |, ^, ~
+		        <<, >> , >>>
+	
+	        注意：
+	        	做位运算，要先把数据换算成二进制。
+	        	计算机中的二进制都是以补码的形式存储的
+
+	        3的二进制：11
+	        	00000000 00000000 00000000 00000011
+	        4的二进制：100
+	        	00000000 00000000 00000000 00000100
+
+	        &位与运算：有0则0。
+	        	00000000 00000000 00000000 00000011
+	           &00000000 00000000 00000000 00000100
+	        	-----------------------------------
+	        	00000000 00000000 00000000 00000000 (补码)
+	        	结果是：0
+
+	        |位或运算：有1则1。
+	        	00000000 00000000 00000000 00000011
+	           |00000000 00000000 00000000 00000100
+	        	-----------------------------------
+	        	00000000 00000000 00000000 00000111 (补码)
+	        	结果是：7
+
+	        ^位异或运算：相同则0，不同则1。
+	        	00000000 00000000 00000000 00000011
+	           &00000000 00000000 00000000 00000100
+	        	-----------------------------------
+	        	00000000 00000000 00000000 00000111 (补码)
+	        	结果是：7
+
+	        ~按位取反运算符：0变1，1变0
+	        	00000000 00000000 00000000 00000011
+	           ~11111111 11111111 11111111 11111100 (补码)
+
+	           补码：11111111 11111111 11111111 11111100
+	           反码：11111111 11111111 11111111 11111011
+	           原码：10000000 00000000 00000000 00000100
+	        	结果是：-4
+
+	           正数的原码/反码/补码是一样的
+        </pre>
+        </div>   
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+            <pre>
+                class OperatorDemo {
+                    public static void main(String[] args) {
+                        //&,|,^,~
+                        
+                        int a = 3;
+                        int b = 4;
+                        
+                        System.out.println(3 & 4);
+                        System.out.println(3 | 4);
+                        System.out.println(3 ^ 4);
+                        System.out.println(~3);
+                    }
+                }
+            </pre>
+        </div>   
+      </div>
+    </div> 
+  </div>
+
+<hr>
+
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+          <pre>
+                ^的特点：A被B位异或两次，A不变。
+        </pre>
+        </div>   
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-panel">
+            <pre>
+                class OperatorDemo2 {
+                    public static void main(String[] args) {
+                        int a = 10;
+                        int b = 20;
+                        
+                        System.out.println(a ^ b ^ b); //10
+                        System.out.println(a ^ b ^ a); //20
+                    }
+                }
+            </pre>
+        </div>   
+      </div>
+    </div> 
+  </div>
+
+<hr>
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+      <div class="layui-row layui-col-space15">
+        <div class="layui-col-md6">
+          <div class="layui-panel">
+            <pre>
+                <<：左移	左边最高位丢弃，右边补0
+                >>：右移	最高位是0，左边补0（正数右移补0）；最高为是1，左边补齐1（负数右移补1）
+                >>>：无符号右移	无论最高位是0还是1，左边补0
+                
+                例题：
+                    请用最有效的方式写出计算2乘以8的结果?
+                        2 * 8
+                        
+                        2 << 3
+          </pre>
+          </div>   
+        </div>
+        <div class="layui-col-md6">
+          <div class="layui-panel">
+              <pre>
+                class OperatorDemo3 {
+                    public static void main(String[] args) {
+                        //<<：把左边的数据乘以2的移动次幂
+                        System.out.println(3 << 2); //3*2^2 = 3*4 = 12;
+                    
+                        //>>：把左边的数据除以2的移动次幂
+                        System.out.println(24 >> 2); //24 / 2^2 = 24 / 4 = 6
+                        System.out.println(24 >>> 2);
+                        
+                        System.out.println(-24 >> 2); 
+                        System.out.println(-24 >>> 2);
+                    }
+                }
+                <hr>
+                计算出3的二进制：11
+                00000000 00000000 00000000 00000011
+            (00)000000 00000000 00000000 0000001100
+                
+            >>的移动：	
+            计算出24的二进制：11000
+                原码：10000000 00000000 00000000 00011000
+                反码：11111111 11111111 11111111 11100111
+                补码：11111111 11111111 11111111 11101000
+                
+                11111111 11111111 11111111 11101000
+                1111111111 11111111 11111111 111010(00) 补码
+                
+                补码：1111111111 11111111 11111111 111010
+                反码：1111111111 11111111 11111111 111001
+                原码：1000000000 00000000 00000000 000110
+                
+                结果：-6
+                
+            >>>的移动：
+                计算出24的二进制：11000
+                原码：10000000 00000000 00000000 00011000
+                反码：11111111 11111111 11111111 11100111
+                补码：11111111 11111111 11111111 11101000
+                
+                11111111 11111111 11111111 11101000
+                0011111111 11111111 11111111 111010(00)
+                
+                结果：
+              </pre>
+          </div>   
+        </div>
+      </div> 
+    </div>
+
+    <hr>    
+    <div class="layui-bg-gray" style="padding: 30px;">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md6">
+            <div class="layui-card">
+              <div class="layui-card-header">练习</div>
+              <div class="layui-card-body">
+                <pre>
+                    请自己实现两个整数变量的交换
+                    没有明确指定数据的类型，默认int类型。
+                </pre>
+              </div>
+            </div>
+          </div>
+          <div class="layui-col-md6">
+            <div class="layui-card">
+              <div class="layui-card-header">答案</div>
+              <div class="layui-card-body">
+                <pre>
+                    class OperatorTest {
+                        public static void main(String[] args) {
+                            int a = 10;
+                            int b = 20;
+                            
+                            System.out.println("a:"+a+",b:"+b);
+                            
+                            //方式1：使用第三方变量(开发中用的)
+                            /*
+                            int c = a;
+                            a = b;
+                            b = c;
+                            System.out.println("a:"+a+",b:"+b);
+                            System.out.println("------------");
+                            */
+                            
+                            //方式2：用位异或实现(面试用)
+                            //左边：a,b,a
+                            //右边：a ^ b
+                            /*
+                            a = a ^ b;
+                            b = a ^ b; //a ^ b ^ b = a
+                            a = a ^ b; //a ^ b ^ a = b
+                            System.out.println("a:"+a+",b:"+b);
+                            */
+                            
+                            //方式3：用变量相加的做法
+                            /*
+                            a = a + b; //a=30
+                            b = a - b; //b=10
+                            a = a - b; //a=20
+                            System.out.println("a:"+a+",b:"+b);
+                            */
+                            
+                            //方式4：一句话搞定
+                            b = (a+b) - (a=b); //b=30-20=10,a=20
+                            System.out.println("a:"+a+",b:"+b);
+                        }
+                    }
+                </pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+        <legend>三目运算符</legend>
+      </fieldset>
+
+      <div class="layui-bg-gray" style="padding: 30px;">
+        <div class="layui-row layui-col-space15">
+          <div class="layui-col-md6">
+            <div class="layui-panel">
+              <pre>
+                单目运算符：~3
+                双目运算符：3 + 4
+            
+                三目运算符：
+                    格式：比较表达式 ? 表达式1 : 表达式2;
+                    结果：boolean类型。
+                    执行流程：
+                        根据比较结果返回一个true或false。
+                        如果是true，就把表达式1作为结果。
+                        如果是false，就把表达式2作为结果。
+            </pre>
+            </div>   
+          </div>
+          <div class="layui-col-md6">
+            <div class="layui-panel">
+                <pre>
+                    class OperatorDemo {
+                        public static void main(String[] args) {
+                            int x = 100;
+                            int y = 200;
+                            
+                            int z = ((x > y)? x: y);
+                            //int z = ((x < y)? x: y);
+                            //int z = ((x == y)? x: y);
+                            
+                            System.out.println("z:"+z);
+                        }
+                    }
+                </pre>
+            </div>   
+          </div>
+        </div> 
+      </div>
+
+<hr>    
+      <div class="layui-bg-gray" style="padding: 30px;">
+          <div class="layui-row layui-col-space15">
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">练习</div>
+                <div class="layui-card-body">
+                  <pre>
+                    练习：
+                        获取两个整数中的最大值
+                        获取三个整数中的最大值
+                        比较两个整数是否相同
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">答案</div>
+                <div class="layui-card-body">
+                  <pre>
+                    class OperatorTest {
+                        public static void main(String[] args) {
+                            //获取两个整数中的最大值
+                            int x = 100;
+                            int y = 200;
+                            
+                            int max = (x > y? x: y);
+                            System.out.println("max:"+max);
+                            System.out.println("--------");
+                            
+                            //获取三个整数中的最大值
+                            int a = 10;
+                            int b = 30;
+                            int c = 20;
+                            
+                            //分两步：
+                            //1.先比较a, b的最大值
+                            //2.a, b的最大值和c比较
+                            int temp = ((a > b)? a: b);
+                            int max1 = (temp > c? temp: c);
+                            System.out.println("max1:"+max1);
+                            System.out.println("--------");
+                            
+                            //比较两个整数是否相同
+                            int m = 100;
+                            int n = 200;
+                            System.out.println(m==n);
+                        }
+                    }
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>键盘录入数据</legend>
+          </fieldset>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    1.导包
+                        格式：
+                            import java.util.Scanner; 
+                        位置：
+                            在class上面。
+                    2.创建键盘录入对象
+                        格式：
+                            Scanner sc = new Scanner(System.in);
+                    3.通过对象获取数据	
+                        格式：
+                            int x = sc.nextInt();
+                        
+                    注意：
+                        nextInt()：获取一个整数
+                        nextLine()：获取一个字符串
+                </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                        import java.util.Scanner;
+                        class ScannerDemo {
+                            public static void main(String[] args) {
+                                //创建键盘录入数据对象
+                                Scanner sc = new Scanner(System.in);
+                                
+                                System.out.println("请你输入一个数据：");
+                                int x = sc.nextInt();
+                                
+                                System.out.println("你输入的数据是："+x);
+                            }
+                        }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+
+<hr>    
+      <div class="layui-bg-gray" style="padding: 30px;">
+          <div class="layui-row layui-col-space15">
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">练习</div>
+                <div class="layui-card-body">
+                  <pre>
+                    练习：
+		                键盘录入两个数据，并对这两个数据求和，输出其结果
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">答案</div>
+                <div class="layui-card-body">
+                  <pre>
+                    class ScannerTest {
+                        public static void main(String[] args) {
+                            //创建键盘录入对象
+                            Scanner sc = new Scanner(System.in);
+                            System.out.println("请输入第一个数据：");
+                            int x = sc.nextInt();
+                            
+                            System.out.println("请输入第二个数据：");
+                            int y = sc.nextInt();
+                            
+                            //把键盘录入的数据进行相加即可
+                            int sum = (x + y);
+                            System.out.println("sum:"+sum);
+                        }
+                    }
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>    
+      <div class="layui-bg-gray" style="padding: 30px;">
+          <div class="layui-row layui-col-space15">
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">练习</div>
+                <div class="layui-card-body">
+                  <pre>
+                    练习：
+                            键盘录入两个数据，获取这两个数据中的最大值
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">答案</div>
+                <div class="layui-card-body">
+                  <pre>
+                    class ScannerTest2 {
+                        public static void main(String[] args) {
+                            //创建键盘录入对象
+                            Scanner sc = new Scanner(System.in);
+                            
+                            System.out.println("请输入第一个数据：");
+                            int a = sc.nextInt();
+                            
+                            System.out.println("请输入第二个数据：");
+                            int b = sc.nextInt();
+                            
+                            //获取这两个数据中的最大值
+                            int max = (a > b? a: b);
+                            System.out.println("max:"+max);
+                        }
+                    }
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<hr>    
+      <div class="layui-bg-gray" style="padding: 30px;">
+          <div class="layui-row layui-col-space15">
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">练习</div>
+                <div class="layui-card-body">
+                  <pre>
+                    练习：
+		                    键盘录入三个数据，获取这三个数据中的最大值
+		                    键盘录入两个数据，比较这两个数据是否相等
+                  </pre>
+                </div>
+              </div>
+            </div>
+            <div class="layui-col-md6">
+              <div class="layui-card">
+                <div class="layui-card-header">答案</div>
+                <div class="layui-card-body">
+                  <pre>
+                    class ScannerTest3 {
+                        public static void main(String[] args) {
+                            //键盘录入三个数据，获取这三个数据中的最大值
+                        
+                            //创建键盘录入对象
+                            Scanner sc = new Scanner(System.in);
+                            
+                            System.out.println("请输入第一个数据：");
+                            int a = sc.nextInt();
+                            
+                            System.out.println("请输入第二个数据：");
+                            int b = sc.nextInt();
+                            
+                            System.out.println("请输入第三个数据：");
+                            int c = sc.nextInt();
+                            
+                            //获取这三个数据中的最大值
+                            int temp = ((a > b)? a: b);
+                            int max = (temp > c? temp : c);
+                            System.out.println("max:"+max);
+                            System.out.println("------------------");
+                            
+                            //键盘录入两个数据
+                            System.out.println("请输入第一个数据：");
+                            int x = sc.nextInt();
+                            
+                            System.out.println("请输入第二个数据：");
+                            int y = sc.nextInt();
+                            
+                            //比较这两个数据是否相等
+                            boolean flag = (x == y);
+                            System.out.println("flag:"+flag);
+                        }
+                    }
+                  </pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</body>
+
+</html>

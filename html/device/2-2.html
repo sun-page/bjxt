@@ -10,178 +10,691 @@
 <link rel="stylesheet" href="../../css/coom.css">
 <body>
   <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
-    <legend><h1 align="center">第一次练习</h1></legend>
+    <legend><h1 align="center">基础知识</h1></legend>
   </fieldset> 
           <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-            <legend>任务</legend>
-            <legend><a href="../../wj/javam.zip">点击下载源文件</a>|<a href="../../wj/zy.zip">点击下载pdf</a></legend>
+            <legend>变量和数据类型</legend>
           </fieldset>
 
-1
-<blockquote class="layui-elem-quote" style="margin-top: 10px;">
-            <div class="box"><b>（1）求输出整数的所有素数因子</b></div>
+
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>数据类型</b></div>
           </blockquote>
+
           <div class="layui-bg-gray" style="padding: 30px;">
             <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
                 <div class="layui-panel">
-                  <div style="padding: 10px 10px;">
-                <pre>
-                    Scanner sc = new Scanner(System.in);
-                    System.out.println("请输入一个正整数：");
-                    int input = sc.nextInt();
-            
-                 for(int a = 2;a<=input;){
-                       if (input % a == 0) {
-                           input = input / a;
-                           System.out.print(a + " ");
-            
-            
-                       }else {
-                           a++;
-                       }
-                       }
-</pre>
-                </div>
+                  <pre>
+                    数据类型：Java是一种强类型语言，针对每一种数据都定义了数据类型。
+	
+                    数据类型分类：
+                        1.基本数据类型
+                        2.引用数据类型(类,接口,数值)
+                        
+                    基本数据类型:4类8种
+                        1.整数			占用字节数
+                          byte			    1
+                          short			    2
+                          int			    	    4
+                          long			    8
+
+                        2.浮点数    
+                          float 		    	    4
+                          double 		    	    8
+
+                        3.字符  
+                          char			    2
+                        4.布尔  
+                          boolean		    	    1
+                        
+                        注意：
+                            整数默认是int类型
+                            浮点数默认是double类型
+                            
+                            长整型后缀用L或者l标记（建议使用L）
+                            单精度浮点数用F或者f标记（建议使用F）
+
+
+
+
+                  </pre>
                 </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+        <b>class DataTypeDemo {</b>
+            <b>public static void main(String[] args) {</b>
+                //定义变量的格式：
+                //数据类型 变量名 = 初始化值;
+                
+                //定义一个字节变量
+            <b>byte b = 10;</b>
+            <b>System.out.println(10);</b>
+            <b>System.out.println(b);</b>
+                
+                //定义一个短整型变量
+            <b>short s = 100;</b>
+            <b>System.out.println(s);</b>
+                
+                //定义一个整型变量
+            <b>int i = 1000;</b>
+            <b>System.out.println(i);</b>
+                
+                //超过了int的范围
+                //int j = 1000000000000;
+            <b>long j = 1000000000000L;</b>
+                //long j = 100L;
+            <b>System.out.println(j);</b>
+                
+                //定义浮点数据变量
+            <b>float f = 12.345F;</b>
+            <b>System.out.println(f);</b>
+                
+            <b> double d = 12.345;</b>
+            <b> System.out.println(d);</b>
+                
+                //定义字符变量
+            <b>char ch = 'a';</b>
+            <b>System.out.println(ch);</b>
+                
+                //定义布尔变量
+            <b>boolean flag = true;</b>
+            <b>System.out.println(flag);</b>
+            }
+        }
+</pre>
+          
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+
+<hr>
+
+        <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>变量使用规则</b></div>
+          </blockquote>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    使用变量的注意事项：
+        		1.作用域
+        			变量定义在哪个大括号内，就在那个大括号内有效。
+        			同一个大括号内不能定义同名的变量。
+                
+        		2.初始化值
+        			没有初始化值的变量不能使用。
+        			定义变量的格式：
+        				a：数据类型 变量名 = 初始化值;
+        				b：数据类型 变量名;
+        				      变量名 = 初始化值;
+                
+        		3.建议一行只定义一个变量
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+        <b>DataTypeDemo2 {</b>
+            <b>public static void main(String[] args) {</b>
+                //定义变量
+            <b>int x = 100;</b>
+                
+                //错误，不能同名
+                //int x = 200;
+                
+                //错误：定义变量必须初始化值
+                //int y;
+                //System.out.println(y);
+                
+            <b>int z;</b>
+            <b>z = 100;</b>
+            <b>System.out.println(z);</b>
+                
+                //不建议一行定义多个变量
+                //int a = 10; int b = 20; int c  = 30;
+            <b>int a = 10; </b>
+            <b>int b = 20; </b>
+            <b>int c  = 30;</b>
+                
+                //int d, e;
+                //d = 40;
+                //e = 50;
+                
+                //int f, int g; //错误
+                //int h; int i; //正确
+            <b>}</b>
+        <b>}</b>
+                  </pre>
+              
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>
+
+        <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>数据类型转换</b></div>
+          </blockquote>
+      
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    +：加法运算符/字符串连接符
+                
+                    注意：
+                        boolean类型不能转换为其他的数据类型
+                
+                    默认转换（小→大）
+                        1.byte, short, char → int, long, float, double
+                        2.byte, short, char之间不能转换，他们之间运算时先转换为int类型
+
+                    大→小时可能损失精度
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+        <b>DataTypeDemo3 {</b> 
+        <b>public static void main(String[] args) {</b> 
+    	    	//加法
+    	    	//System.out.println(3 + 4);
+            
+    	    	//两个int类型做加法
+            <b>int x = 3;</b> 
+            <b>int y = 4;</b> 
+            <b>int z = x + y;</b> 
+            <b>System.out.println(z);</b> 
+            
+    	    	//定义一个byte类型，一个int类型，做加法
+            <b>byte a = 3;</b> 
+            <b>int b = 4;</b> 
+            <b>System.out.println(a + b);</b> 
+            
+    	    	//可能损失精度
+    	    	//byte c =  a + b;
+    	    	<b>int c = a + b;</b> 
+            <b>System.out.println(c);</b> 
+            <b>}</b>
+        <b>}</b>
+                  </pre>
+              
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>
+
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+              <div class="box"><b>强制数据类型转换</b></div>
+            </blockquote>
+        
+            <div class="layui-bg-gray" style="padding: 30px;">
+              <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                  <div class="layui-panel">
+                    <pre>
+                        强制转换：大的数据类型→小的数据类型
+		
+                        格式：
+                            目标数据类型 变量 = (目标数据类型) (被转换的数据);
+                            
+                        注意：
+                            不要随意用强制转换，可能损失精度。
+                    </pre>
+                  </div>   
+                </div>
+                <div class="layui-col-md6">
+                  <div class="layui-panel">
+
+                
+                  </div>   
+                </div>
+              </div> 
+            </div>
+
+  <div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">例一</div>
+          <div class="layui-card-body">
+            <pre>
+                <b>class DataTypeDemo4 {</b>
+                    <b>public static void main(String[] args) {</b>
+                        <b>byte a = 3;</b>
+                        <b>int b = 4;</b>
+                        
+                        //没有问题
+                        //int c = a + b;
+                        
+                        //有问题
+                        //byte c = a + b; 
+                        //用强制类型转换改进
+                        <b>byte c = (byte) (a + b);</b>
+                        <b>System.out.println(c);</b>
+                      <b>}</b>
+                  <b>}</b>
+                            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">例二</div>
+          <div class="layui-card-body">
+            <pre>
+                <b>class DataTypeDemo5 {</b>
+                    <b>public static void main(String[] args) {</b>
+                        //把double赋值给float，要用强制转换
+                        <b>double d = 12.345;</b>
+                        <b>float f = (float)d;</b>
+                        
+                        //下面两个定义没有区别
+                        <b>float f1 = (float)12.345;</b>
+                        <b>float f2 = 12.345F;</b>
+                        <b>System.out.println(f1);</b>
+                        <b>System.out.println(f2);</b>
+                    <b>}</b>
+                <b>}</b>
+
+
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+  <legend>例题</legend>
+</fieldset>   
+ 
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">1</div>
+        <div class="layui-card-body">
+          <pre>
+		byte b1 = 3, b2 = 4, b;
+		b = b1 + b2;
+		b = 3 + 4;
+		哪句是编译失败的呢？为什么呢？
+		
+		b = b1 + b2;是有问题的。
+		变量相加，先看类型，结果赋值时也会考虑类型问题。
+		常量相加，先做加法，看结果是否在赋值的数据类型范围内，如果不是则报错。
+        <hr>
+        class DataTypeDemo6 {
+        	public static void main(String[] args) {
+        		//定义了三个byte类型的变量，b1，b2，b3
+        		//b1的值是3，b2的值是4，b没有值
+        		byte b1 = 3, b2 = 4, b;
+            
+        		//b = b1 + b2; //这个是类型提升，所有有问题
+            
+        		b = 3 + 4; //常量，先把结果计算出来，然后看是否在byte的范围内，如果不在就报错。
+        	}
+        }
+          </pre>
+        </div>
+      </div>
+    </div>
+    <div class="layui-col-md6">
+      <div class="layui-card">
+        <div class="layui-card-header">2</div>
+        <div class="layui-card-body">
+          <pre>
+                byte b = 130;有没有问题?如果我想让赋值正确，可以怎么做?结果是多少呢?
+	        练习：byte b = (byte)300;
+<hr>
+            class DataTypeDemo7 {
+            	public static void main(String[] args) {
+            		//byte的范围：-128~127。
+            		//130不在此范围内，报错。
+            		//byte b = 130; 
+                
+            		//我们可以使用强制类型转换
+            		byte b = (byte) 130;
+                
+            		//结果是多少呢?
+            		System.out.println(b);
+            	}
+            }
+            /*
+            	分析：
+            		1.获取130的二进制
+            			00000000 00000000 00000000 10000010
+            			这是130的原码，也是反码，还是补码。
+            		2.做截取操作，截成byte类型。
+            			10000010 
+            			这个结果是补码。
+            		3.已知补码求原码。
+            					符号位		数值位
+            			补码：	1			0000010
+
+            			反码：	1			0000001
+
+            			原码：	1			1111110
+            */
+          </pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> 
+<div class="layui-bg-gray" style="padding: 30px;">
+    <div class="layui-row layui-col-space15">
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">3</div>
+          <div class="layui-card-body">
+            <pre>
+                记住ASCII码表中的三个值：
+		    'a'		97
+		    'A'		65
+		    '0'		48
+<hr>
+            class DataTypeDemo8 {
+            	public static void main(String[] args) {
+            		//直接输出一个字符
+            		System.out.println('a'); //a
+            		//字符+整数：输出整数
+            		System.out.println('a' + 1); //98
+            	}
+            }
+            </pre>
+          </div>
+        </div>
+      </div>
+      <div class="layui-col-md6">
+        <div class="layui-card">
+          <div class="layui-card-header">4</div>
+          <div class="layui-card-body">
+            <pre>
+                字符串+整数：输出字符串
+                这里的+不是加号，是字符连接符
+                字符连接符的两端，只要有一端是字符串，结果就自动转化为字符串
+            */
+            class DataTypeDemo9 {
+                public static void main(String[] args) {
+                    System.out.println("hello" + 'a'+1);   //helloa1
+                    System.out.println('a' + 1 + "hello"); //98hello
+                    
+                    System.out.println("5+5=" + 5 + 5); //5+5=55
+                    System.out.println(5+5 + "=5+5"); 	//10=5+5
+                }
+            }
+
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>标识符</legend>
+          </fieldset>
+
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>命名规则</b></div>
+          </blockquote>
+      
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    标识符：给类，接口，方法，变量等起名字。
+        		命名规则：
+        			1.字母，区分大小写
+        			2.数字字符
+        			3.$和_	
+        		注意事项：
+        			1.不能以数字开头
+        			2.不能是Java中的关键字
+        			3.Java区分大小写
+        		常见的命名规则：见名知意
+        			class Student {}
+
+        	包：就是文件夹，不同包中的类名可以相等
+        	        全部小写
+        			单级：liuyi
+        			多级：cn.itcast
+
+
+        	类或接口：
+        		一个单词：首字母大写
+        			举例：Student,Dog
+        		多个单词：每个单词的首字母必须大写
+        			举例：HelloWorld, StudentName
+
+        	方法或变量：
+        		一个单词：首字母小写
+        			举例：main,age
+        		多个单词：驼峰原则——从第二个单词开始，每个单词的首字母大写
+        			举例：studentAge,showAllNames()
+
+        	常量：
+        		一个单词：全部大写
+        			举例：PI
+        		多个单词：每个单词都大写，用_隔开
+        			举例：STUDENT_MAX_AGE
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+            <b>class MakeNameDemo {</b>
+	            <b>public static void main(String[] args) {</b>
+		        //正确做法
+		        <b>int x = 100;</b>
+                
+		        //不能以数字开头
+		        //int 1y = 100;</b>
+		        <b>int y1 = 100;</b>
+                
+		        //不能是Java中的关键字
+		        //int public = 100;
+		        <b>int Public = 100;</b>
+                <b>}</b>
+            <b>}</b>
+                  </pre>
+              
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>常量和进制</legend>
+          </fieldset>
+
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>常量</b></div>
+          </blockquote>
+           
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    常量：
+        		在程序执行过程中，其值不发生改变的量。
+
+        	分类：
+        		1.字面值常量
+        		2.自定义常量(后面讲)
+
+        	字面值常量
+        		1.字符串常量	用双引号括起来
+        			举例："hello", "world", "HelloWorld"
+        		2.整数常量	所有的整数
+        			举例：100, 200
+        		3.小数常量	所有的小数
+        			举例：10.23, 110.11
+        		4.字符常量	用单引号括起来
+        			举例：'a', 'A', '0'
+        			错误的：'ab'
+        		5.布尔常量	比较特殊
+        			只有两个：true, false
+        		6.空常量	
+        			只有一个：null
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class ConstantDemo {
+                        public static void main(String[] args) {
+                            //字符串常量
+                            System.out.println("hello");
+                            
+                            //整数常量
+                            System.out.println(100);
+                            
+                            //小数常量
+                            System.out.println(100.10);
+                            
+                            //字符常量
+                            System.out.println('a');
+                            System.out.println('A');
+                            System.out.println('0');
+                            //这个是有问题的
+                            //System.out.println('ab');
+                            
+                            //布尔常量
+                            System.out.println(true);
+                            System.out.println(false);
+                        }
+                    }
+                  </pre>
+                </div>   
+              </div>
             </div> 
           </div>
 
 
 
-2
-<blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>九九乘法口诀</b></div>
-</blockquote>
-            <div class="layui-bg-gray" style="padding: 30px;">
-                <div class="layui-row layui-col-space15">
-                    <div class="layui-panel">
-                        <div style="padding: 10px 10px;">
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>进制</b></div>
+          </blockquote>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    不同进制：
+                        二进制：由0，1组成。以0b开头。
+                        八进制：由0,1,...7组成。以0开头。
+                        十进制：由0,1,...9组成。默认整数是十进制。
+                        十六进制：由0,1,...9,a,b,c,d,e,f(大小写均可)组成。以0x开头。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
                     <pre>
-                        for (int i = 0; i < 9; i++){//规定九九乘法表的行数，九行
-                            
-                            for (int j = 0; j < i + 1; j++){//规定九九乘法表每一行的列数，i+1列
-               
-                             System.out.print((j+1)+"*"+(i+1)+"="+(j+1)*(i+1)+" ");
-
-                             }
-                                System.out.println();
-                            }
-                    </pre>
-                        </div>
-                    </div>   
-                </div> 
-            </div>
-
-3
-<blockquote class="layui-elem-quote" style="margin-top: 10px;">
-    <div class="box"><b>循环找7</b></div>
-  </blockquote>
-              <div class="layui-bg-gray" style="padding: 30px;">
-                  <div class="layui-row layui-col-space15">
-                      <div class="layui-panel">
-                          <div style="padding: 10px 10px;">
-                      <pre>
-                        int count = 0;
-        int sum = 0;
-        //int top = 1;
-
-        //while (top<=1000)
-        for(int top = 1;top<=1000;top++)
-        {
-            if (top == 7 || (top % 7) == 0) {
-
-                count++;
-                sum += top;
-                System.out.println(top);
-
-
-            } else if ((top / 10) == 7 || (top % 10) == 7 || (top % 7) == 0) {
-
-                count++;
-                sum += top;
-                System.out.println(top);
-
-            } else if ((top / 100) == 7 || (top / 10 % 10) == 7 || (top % 10) == 7 || (top % 7) == 0) {
-
-                count++;
-                sum += top;
-                System.out.println(top);
-
-            }
-            //top++;
-        }
-
-
-        System.out.println("和为："+sum);
-        System.out.println("个数："+count);
-                      </pre>
-                          </div>
-                      </div>   
-                  </div> 
-              </div>
-  
-
-4
-<blockquote class="layui-elem-quote" style="margin-top: 10px;">
-    <div class="box"><b>java一元二次方程求根公式</b></div>
-  </blockquote>
-              <div class="layui-bg-gray" style="padding: 30px;">
-                  <div class="layui-row layui-col-space15">
-                      <div class="layui-panel">
-                          <div style="padding: 10px 10px;">
-                      <pre>
-                        Scanner sc = new Scanner(System.in);
-        System.out.println("请输入a的值：");
-        double a = sc.nextDouble();
-        System.out.println("请输入b的值：");
-        double b = sc.nextDouble();
-        System.out.println("请输入c的值：");
-        double c = sc.nextDouble();
-        double v = (b*b)-(4*a*c);
-        double x1;
-        double x2;
-        if (v>=0){
-            x1 = (Math.sqrt(v)-b)/(2*a);
-            x2 = -(Math.sqrt(v)+b)/(2*a);
-            System.out.println("方程两根为：\n"+"x1:"+x1+"\nx2:"+x2);
-        }else {
-            System.out.println("方程无实数根。");
-        }
-                      </pre>
-                          </div>
-                      </div>   
-                  </div> 
-              </div>
-  
-
-5
-<blockquote class="layui-elem-quote" style="margin-top: 10px;">
-    <div class="box"><b>编写程序，从键盘输入一个两位数，按数位逆序输出。提示：使用""和"/"运算求出每一个位置上的数字。</b></div>
-  </blockquote>
-              <div class="layui-bg-gray" style="padding: 30px;">
-                  <div class="layui-row layui-col-space15">
-                      <div class="layui-panel">
-                          <div style="padding: 10px 10px;">
-                      <pre>
-                        import java.util.Scanner;
-                        public class Fifth {
-                        public static void main(String[] args) {
-                            Scanner sc = new Scanner(System.in);
-                            System.out.print("请输入一个两位整数：");
-                            int a = sc.nextInt();
-                            int x ,g,s;
-                            g = a%10;
-                            s = a/10;
-                            x = g*10+s;
-                            System.out.println(x);
+                        class JinZhiDemo {
+                            public static void main(String[] args) {
+                                System.out.println(100); //十进制
+                                
+                                System.out.println(0b100); //二进制
+                                System.out.println(0100); //八进制
+                                System.out.println(0x100); //十六进制
                             }
                         }
-                      </pre>
-                          </div>
-                      </div>   
-                  </div> 
+                    </pre>
+                </div>   
               </div>
-  
+            </div> 
+          </div>
+
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>关键字</legend>
+          </fieldset>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    关键字：被java语言赋予特定含义的单词。
+	                特点：关键字全部小写。
+                                
+	                注意：
+	                	1.goto和const是保留字
+	                	2.类似于Notepad++这样的高级记事本，针对关键字都有特殊的颜色标记。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                        class KeyWordDemo {
+                            public static void main(String[] args) {
+                                System.out.println("HelloWorld");
+                            }
+                        }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>注释</legend>
+          </fieldset>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    /*
+                     * 注释：用于解释说明的文字
+                     * 
+                     * Java中注释的分类及格式
+                     * 单行注释：//
+                     * 多行注释：/星号 星号/，多行注释不可以嵌套使用，单行注释可以
+                     * 文档注释：被javadoc工具解析生成一个说明书，见面向对象部分
+                     */
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                        class ZhuShiDemo {
+                            //main方法是程序的入口，被jvm调用
+                            public static void main(String[] args) {
+                                System.out.println("好好学习,天天向上");
+                            }
+                        }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
 
 
 

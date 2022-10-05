@@ -51,6 +51,2013 @@
             </div> 
           </div>
 
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>跳转语句</legend>
+          </fieldset>
+          
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>break</b></div>
+          </blockquote>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    控制跳转语句：
+                    		break:中断
+                    		continue:继续
+                    		return:返回
+                                      
+                    	break:中断
+                    	使用场景：
+                    		1.switch语句中
+                    		2.循环语句中。
+                    			(循环语句中加入了if判断的情况)
+                    		注意：离开上面的两个场景，无意义。
+                                      
+                    	如何使用呢?
+                    		1.跳出单层循环
+                    		2.跳出多层循环
+                    			要想实现这个效果，就必须知道一个东西。带标签的语句。
+                    			格式：
+                    				标签名: 语句
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                      class BreakDemo {
+                        public static void main(String[] args) {
+                          //跳出单层循环
+                          for(int x=0; x<10; x++) {
+                            if(x == 3) {
+                              break;
+                            }
+                              System.out.println("HelloWorld");
+                          }
+                        }
+                      }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>continue</b></div>
+          </blockquote>
+          
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    continue:继续
+	
+                    只适用于：循环。不能用于条件语句。
+                      
+                      continue和break的区别：
+                          break:退出最近的一层循环
+                          continue:退出本次循环，进入下一次的循环
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                    <pre>
+                      class ContinueDemo {
+                        public static void main(String[] args) {
+                          for(int x=0; x<10; x++) {
+                            if(x == 3) {
+                              //break;
+                              continue;
+                            }
+                            
+                            System.out.println(x);
+                          }
+                        }
+                      }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b>return</b></div>
+          </blockquote>
+          
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    return:返回
+	
+                    作用：结束方法，而不是结束循环。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                  class ReturnDemo {
+                    public static void main(String[] args) {
+                      for(int x=0; x<10; x++) {
+                        if(x == 2) {
+                          System.out.println("退出");
+                          //break;
+                          //continue;
+                          return;
+                        }
+                        
+                        System.out.println(x);
+                      }
+                      
+                      System.out.println("over");
+                    }
+                  }
+                    </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>选择结构if</legend>
+          </fieldset>
+
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    选择结构：
+                    if语句
+                    switch语句
+                    
+                  if语句：
+                    格式1
+                    格式2
+                    格式3
+                    
+                  if语句的格式：
+                    if(比较表达式) {
+                      语句体;
+                    }
+                    
+                    执行流程：
+                      先计算比较表达式的值，看是true还是false。
+                      如果是true，就执行语句体；
+                      如果是false，就不执行语句体；
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class IfDemo {
+                      public static void main(String[] args) {
+                        int x = 10;
+                        
+                        if(x == 10) {
+                          System.out.println("x等于10");
+                        }
+                        
+                        if(x == 20) {
+                          System.out.println("x等于20");
+                        }
+                        
+                        System.out.println("over");
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+<hr>
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    if语句的注意事项：
+		                    1.比较表达式无论简单还是复杂，结果必须是boolean类型；
+		                    2.if的语句体如果是一条语句，大括号可以省略；
+		                          如果是多条语句，就不能省略。建议永远不要省略。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class IfDemo2 {
+                      public static void main(String[] args) {
+                        int x = 10;
+                        
+                        if(x == 10) {
+                          System.out.println("x等于10");
+                        }
+                        
+                        if((x > 5) || (x == 10)) {
+                          System.out.println("x大于或者等于10");
+                        }
+                        System.out.println("-------------------");
+                        
+                        int a = 100;
+                        if(a != 100) {
+                          System.out.println("a的值不是100");
+                          System.out.println("over");
+                        }
+                        System.out.println("-------------------");
+                        
+                        int b = 100;
+                        if(b != 100);  //这里其实是有语句体的，只不过是空语句体。
+                        
+                        //匿名代码块
+                        {
+                          System.out.println("b的值是100");
+                          System.out.println("over");
+                        }
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+
+          <hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    if语句格式2：
+                  		if(比较表达式) {
+                  			语句体1;
+                  		}else {
+                  			语句体2;
+                  		}
+                  	执行流程：
+                  		先计算比较表达式的值，看返回值是true还是false。
+                  		如果是true，就执行语句体1；
+                  		如果是false，就执行语句体2；
+                    
+                  	注意：else后面是没有比较表达式的，只有if后面有。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class IfDemo3 {
+                      public static void main(String[] args) {
+                        //判断两个数据是否相等
+                        int a = 10;
+                        int b = 20;
+                        
+                        if(a == b) {
+                          System.out.println("a等于b");
+                        }else {
+                          System.out.println("a不等于b");
+                        }
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    三元运算符和if语句的区别：
+                    		三元运算符实现的，都可以采用if语句实现。反之不成立。
+                                      
+                    		什么时候if语句不能用三元运算符实现呢?
+                    			当if语句控制的操作是一个输出语句的时候就不行。
+                    			因为三元运算符的计算结果是boolean类型，而不是一个输出。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class IfDemo4 {
+                      public static void main(String[] args) {
+                        //获取两个数据的最大值
+                        int a = 10;
+                        int b = 20;
+                        
+                        //用if语句实现
+                        int max1;
+                        if(a > b) {
+                          max1 = a;
+                        }else {
+                          max1 = b;
+                        }
+                        System.out.println("max1:"+max1);
+                        
+                        //用三元运算符改进
+                        int max2 = (a > b)? a: b;
+                        System.out.println("max2:"+max2);
+                        System.out.println("----------");
+                        
+                        //判断一个数据是奇数还是偶数,并输出是奇数还是偶数
+                        int x = 100;
+                        
+                        if(x%2 == 0) {
+                          System.out.println("100是一个偶数");
+                        }else {
+                          System.out.println("100是一个奇数");
+                        } 
+                        
+                        //用三元改进
+                        //这种改进是错误的。
+                        //String s = (x%2 == 0)?System.out.println("100是一个偶数");:System.out.println("100是一个奇数");;
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    if(比较表达式1) {
+                      语句体1;
+                    }else if(比较表达式2) {
+                      语句体2;
+                    }else if(比较表达式3) {
+                      语句体3;
+                    }
+                    ...
+                    else {
+                      语句体n+1;
+                    }
+                    
+                  执行流程：
+                    先计算比较表达式1,看返回值是true还是false
+                    如果是true，就执行语句体1，if语句结束
+                    如果是false，计算比较表达式2，看其返回值是true还是false
+                    
+                    如果是true，就执行语句体2，if语句结束。
+                    如果是false，就计算比较表达式3，看其返回值是true还是false，
+                    ...
+                    如果都是false，就执行语句体n+1。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    import java.util.Scanner;
+
+                    class IfDemo5 {
+                    	public static void main(String[] args) {
+                    		//需求：键盘录入一个成绩，判断并输出成绩的等级。
+                    		/*
+                    			90-100 优秀
+                    			80-90  好
+                    			70-80  良
+                    			60-70  及格
+                    			0-60   不及格
+                    		*/
+                      
+                    		//创建键盘录入对象
+                    		Scanner sc = new Scanner(System.in);
+                      
+                    		//录入数据
+                    		System.out.println("请输入你的考试成绩：");
+                    		int score = sc.nextInt();
+                      
+                    		/*
+                    		未改进
+                    		if(score>=90 && score<=100) {
+                    			System.out.println("优秀");
+                    		}else if(score>=80 && score<90) {
+                    			System.out.println("好");
+                    		}else if(score>=70 && score<80) {
+                    			System.out.println("良");
+                    		}else if(score>=60 && score<70) {
+                    			System.out.println("及格");
+                    		}else {
+                    			System.out.println("不及格");
+                    		}
+                    		*/
+                      
+                    		//改进
+                    		//在测试程序的时候，要考虑这样几个问题：
+                    		//正确数据，错误数据，边界数据。
+                      
+                      
+                    		if(score<0 || score>100) {
+                    			System.out.println("你输入的成绩有误");
+                    		}else if(score>=90 && score<=100) {
+                    			System.out.println("优秀");
+                    		}else if(score>=80 && score<90) {
+                    			System.out.println("好");
+                    		}else if(score>=70 && score<80) {
+                    			System.out.println("良");
+                    		}else if(score>=60 && score<70) {
+                    			System.out.println("及格");
+                    		}else {
+                    			System.out.println("不及格");
+                    		}
+                    	}
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>例题</legend>
+          </fieldset>   
+           
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">1</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      if语句格式2的练习：
+                      1.获取两个数据中较大的值
+                      2.判断一个数据是奇数还是偶数，并输出是奇数还是偶数
+                      <hr>
+                      import java.util.Scanner;
+
+                      class IfTest {
+                      	public static void main(String[] args) {
+                      		//创建键盘录入对象
+                      		Scanner sc = new Scanner(System.in);
+                        
+                      		//获取两个数据中较大的值
+                      		System.out.println("请输入第一个数据：");
+                      		int a = sc.nextInt();
+                        
+                      		System.out.println("请输入第二个数据：");
+                      		int b = sc.nextInt();
+                        
+                      		//定义一个变量接收最大值
+                      		int max;
+                        
+                      		if(a > b) {
+                      			max = a;
+                      		}else {
+                      			max = b;
+                      		}
+                        
+                      		System.out.println("max:"+max);
+                      		System.out.println("----------------");
+                        
+                      		//判断一个数据是奇数还是偶数
+                      		System.out.println("请输入你要判断的数据：");
+                      		int x = sc.nextInt();
+                        
+                      		if(x % 2 == 0) {
+                      			System.out.println(x+"这个数据是偶数");
+                      		}else {
+                      			System.out.println(x+"这个数据是奇数");
+                      		}
+                      	}
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">2</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      三种if语句的使用情况：
+                      		格式1：适合做单个判断
+                      		格式2：适合做两个判断
+                      		格式3：适合做多个判断
+
+                      	需求：
+                      		键盘录入x的值，计算出y的并输出。
+
+                      		x>=3	y = 2x + 1;
+                      		-1<=x<3	y = 2x;
+                      		x<=-1	y = 2x – 1;
+
+                      	分析：
+                      		1.由于数据要键盘录入，所以使用Scanner。
+                      		2.由于是三种判断，所以选择if语句格式3。
+          <hr>
+                      class IfTest2 {
+                      	public static void main(String[] args) {
+                      		//创建键盘录入对象
+                      		Scanner sc = new Scanner(System.in);
+                        
+                      		System.out.println("请输入x的值：");
+                      		int x = sc.nextInt();
+                        
+                      		//定义一个y
+                      		int y;
+                        
+                      		//用if语句格式3进行判断
+                      		if(x >= 3) {
+                      			y = 2*x + 1;
+                      		}else if(x>=-1 && x<3) {
+                      			y = 2*x;
+                      		}else {
+                      			y = 2*x - 1;
+                      		}
+                        
+                      		System.out.println("y:"+y);
+                      	}
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+<!-- <hr> -->
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">3</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      键盘录入月份的值，输出对应的季节。
+	
+                    	春	3,4,5
+                    	夏	6,7,8
+                    	秋	9,10,11
+                    	冬	12,1,2
+
+                    	分析：
+                    		1.键盘录入月份的值，使用Scanner。
+                    		2.判断情况较多，用if语句格式3。
+
+                    	if语句的使用场景：
+                    		1.针对表达式是boolean类型的判断
+                    		2.针对范围的判断
+                      <hr>
+                      class IfTest3 {
+                        	public static void main(String[] args) {
+                        		//创建键盘录入对象
+                        		Scanner sc = new Scanner(System.in);
+                          
+                        		//录入数据
+                        		System.out.println("请你输入一个月份:");
+                        		int month = sc.nextInt();
+                          
+                        		if(month<1 || month>12) {
+                        			System.out.println("你输入的月份有误");
+                        		}else if(month>=3 && month<=5) {
+                        			System.out.println("春季");
+                        		}else if(month>=6 && month<=8) {
+                        			System.out.println("夏季");
+                        		}else if(month>=9 && month<=11) {
+                        			System.out.println("秋季");
+                        		}else {
+                        			System.out.println("冬季");
+                        		}
+                        		System.out.println("--------------");
+                        	}
+                        }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">4</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      if语句的嵌套使用
+	                    案例：获取三个数据中的最大值
+          <hr>
+                    class IfTest4 {
+                      public static void main(String[] args) {
+                        int a = 10;
+                        int b = 30;
+                        int c = 20;
+
+                        //三元实现
+                        //int temp = (a>b)? a: b;
+                        //int max = (temp>c)? temp: c;
+                        //System.out.println("max:"+max);
+                        //System.out.println("--------");
+
+                        //用if语句实现
+                        int max;
+                        if(a > b) {
+                          if(a > c) {
+                            max = a;
+                          }else {
+                            max = c;
+                          }
+                        }else {
+                          if(b > c) {
+                            max = b;
+                          }else {
+                            max = c;
+                          }
+                        }
+                        System.out.println("max:"+max);
+                      }
+                    }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>选择结构switch</legend>
+          </fieldset>
+
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    switch语句格式：
+                    switch(表达式) {
+                      case 值1:
+                        语句体1;
+                        break;
+                      case 值2:
+                        语句体2;
+                        break;
+                      ...
+                      default:
+                        语句体n+1;
+                        break;
+                    }
+                    
+                  解释：
+                    switch：switch选择结构
+                    表达式：这里取值是有限定的
+                      byte,short,int,char
+                      JDK5以后可以是枚举
+                      JDK7以后可以是字符串
+                    case：后面的值要和表达式比较
+                    语句体：要执行的代码
+                    break：表示中断，结束的意思，可以控制switch语句的结束。
+                    default：当所有的值都和表达式不匹配时，就执行default的内容。相当于if语句的else。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                  class ReturnDemo {
+                    public static void main(String[] args) {
+                      for(int x=0; x<10; x++) {
+                        if(x == 2) {
+                          System.out.println("退出");
+                          //break;
+                          //continue;
+                          return;
+                        }
+                        
+                        System.out.println(x);
+                      }
+                      
+                      System.out.println("over");
+                    }
+                  }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+<hr>
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    switch语句的注意事项：
+                    1.case后面只能是常量，不能是变量，多个case后面的值不能相同
+                    2.default可以省略，但不建议
+                    3.break语法上可以省略，但不建议，因为结果可能与我们想要的不一样
+                    4.default不一定在最后，但建议在最后
+                    5.switch语句的结束条件
+                      a：遇到break结束
+                      b：执行到末尾结束
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                  import java.util.Scanner;
+                    class SwitchDemo2 {
+                      public static void main(String[] args) {
+                        //创建键盘录入对象
+                        Scanner sc = new Scanner(System.in);
+                        
+                        //控制键盘录入数据
+                        System.out.println("请输入一个数据(1-7):");
+                        int week = sc.nextInt(); //3
+                        
+                        //case后面不能是变量
+                        //int number = 3;
+                        //然后把case后面的值改为number，就会报错
+                        
+                        //switch语句
+                        switch(week) {
+                          case 1:
+                            System.out.println("星期一");
+                            break;
+                          case 2:
+                            System.out.println("星期二");
+                            break;
+                          case 3:
+                            System.out.println("星期三");
+                            break;
+                          case 4:
+                            System.out.println("星期四");
+                            break;
+                          case 5:
+                            System.out.println("星期五");
+                            break;
+                          case 6:
+                            System.out.println("星期六");
+                            break;
+                          case 7:
+                            System.out.println("星期日");
+                            break;
+                          default:
+                            System.out.println("你输入的数据有误");
+                            //break;
+                        }
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+            <legend>例题</legend>
+          </fieldset>   
+           
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">1</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      根据你键盘录入的字符串，判断是否有满足要求的，如果有就输出。
+                      否则，提示有误。
+                      String s = sc.nextLine();
+                      <hr>
+                      import java.util.Scanner;
+                          class SwitchTest3 {
+                          	public static void main(String[] args) {
+                          		//创建键盘录入对象
+                          		Scanner sc = new Scanner(System.in);
+                            
+                          		//录入数据
+                          		System.out.println("请输入你要判断的字符串：");
+                          		String s = sc.nextLine();
+                            
+                          		switch(s) {
+                          			case "hello":
+                          				System.out.println("你输入的是hello");
+                          				break;
+                          			case "world":
+                          				System.out.println("你输入的是world");
+                          				break;
+                          			case "java":
+                          				System.out.println("你输入的是java");
+                          				break;
+                          			default:
+                          				System.out.println("没有找到你输入的数据");
+                          				//break;
+                          		}
+                          	}
+                          }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">2</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      用switch语句实现键盘录入月份，输出对应的季节
+	
+                      分析：
+                        1.键盘录入一个月份，用Scanner实现
+                        2.用switch语句实现
+                        
+                      if语句和switch语句的区别
+                        if语句：
+                          1.针对结果是boolean类型的判断
+                          2.针对一个范围的判断
+                          3.针对几个常量值的判断
+                        
+                        switch语句：
+                          针对几个常量值的判断
+                          
+                          
+                      case穿透：几个case共用一个操作语句
+          <hr>
+          import java.util.Scanner;
+
+          class SwitchTest4 {
+            public static void main(String[] args) {
+              //创建键盘录入对象
+              Scanner sc = new Scanner(System.in);
+              
+              //录入数据
+              System.out.println("请输入月份(1-12)：");
+              int month = sc.nextInt();
+              
+              /*
+              switch(month) {
+                case 1:
+                  System.out.println("冬季");
+                  break;
+                case 2:
+                  System.out.println("冬季");
+                  break;
+                case 3:
+                  System.out.println("春季");
+                  break;
+                case 4:
+                  System.out.println("春季");
+                  break;
+                case 5:
+                  System.out.println("春季");
+                  break;
+                case 6:
+                  System.out.println("夏季");
+                  break;
+                case 7:
+                  System.out.println("夏季");
+                  break;
+                case 8:
+                  System.out.println("夏季");
+                  break;
+                case 9:
+                  System.out.println("秋季");
+                  break;
+                case 10:
+                  System.out.println("秋季");
+                  break;
+                case 11:
+                  System.out.println("秋季");
+                  break;
+                case 12:
+                  System.out.println("冬季");
+                  break;
+                default:
+                  System.out.println("你输入的月份有误");
+              }
+              */
+              
+              //这样写太麻烦了，用case穿透
+              switch(month) {
+                case 1:
+                case 2:
+                case 12:
+                  System.out.println("冬季");
+                  break;
+                case 3:
+                case 4:
+                case 5:
+                  System.out.println("春季");
+                  break;
+                case 6:
+                case 7:
+                case 8:
+                  System.out.println("夏季");
+                  break;
+                case 9:
+                case 10:
+                case 11:
+                  System.out.println("秋季");
+                  break;
+                default:
+                  System.out.println("你输入的月份有误");
+              }
+            }
+          }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>循环结构for</legend>
+          </fieldset>
+
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    循环语句：for循环,while循环,do...while循环。
+	
+	                  for循环格式：
+	                  	for(初始化语句;判断条件语句;控制条件语句) {
+	                  		循环体语句;
+	                  	}
+                    
+	                  	执行流程：
+	                  		A:执行初始化语句
+	                  		B:执行判断条件语句,看其返回值是true还是false
+	                  			如果是true，就继续执行
+	                  			如果是false，就结束循环
+	                  		C:执行循环体语句;
+	                  		D:执行控制条件语句
+	                  		E:回到B继续。
+                    
+	                  注意事项：
+	                  	A:判断条件语句无论简单还是复杂结果是boolean类型。
+	                  	B:循环体语句如果是一条语句，大括号可以省略；如果是多条语句，大括号不能省略。建议永远不要省略。
+	                  	C:一般来说：有左大括号就没有分号，有分号就没有左大括号
+                    
+	                  需求：请在控制台输出10次"HelloWorld"
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class ForDemo {
+                      public static void main(String[] args) {
+                        //最原始的做法
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("HelloWorld");
+                        System.out.println("----------");
+                        
+                        //这种做法不好,代码的重复度太高。
+                        //所以呢，我们用循环改进
+                        for(int x=1;x<=10;x++) {
+                          System.out.println("HelloWorld");
+                        }
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+<hr>1
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      需求：请在控制台输出数据1-10
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo2 {
+                        public static void main(String[] args) {
+                          //原始做法
+                          System.out.println(1);
+                          System.out.println(2);
+                          System.out.println(3);
+                          System.out.println(4);
+                          System.out.println(5);
+                          System.out.println(6);
+                          System.out.println(7);
+                          System.out.println(8);
+                          System.out.println(9);
+                          System.out.println(10);
+                          
+                          System.out.println("-------------");
+                          
+                          //用循环改进
+                          for(int x=1; x<=10; x++) {
+                            System.out.println(x);
+                          }
+                          
+                          System.out.println("-------------");
+                          
+                          //从0开始
+                          for(int x=0; x<10; x++) {
+                            System.out.println(x+1);
+                          }
+                        }
+                      }	
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>2
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      需求：求出1-10之间数据之和
+	
+                      分析：
+                        0+1=1
+                          1+2=3
+                            3+3=6
+                              6+4=10
+                                10+5=15
+                                   ...                           
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo3 {
+                        public static void main(String[] args) {
+                          //原始做法
+                          System.out.println(1+2+3+4+5+6+7+8+9+10);
+                          
+                          //用循环改进
+                          int sum = 0;
+                          
+                          for(int x=1; x<=10; x++) {
+                            sum = sum + x;
+                          }
+                          
+                          System.out.println("sum:"+sum);
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>3
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：
+                      1.求1-100之和。
+                      2.求1-100之间偶数和
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo4 {
+                        public static void main(String[] args) {
+                          //求1-100之和。
+                          int sum1 = 0;
+                          
+                          for(int x=1; x<=100; x++) {
+                            sum1 +=x;
+                          }
+                          
+                          System.out.println("1-100之和是："+sum1);
+                          System.out.println("------------------");
+                          
+                          //出1-100之间偶数和
+                          //方式1
+                          int sum2 = 0;
+                          
+                          for(int x=1; x<=100; x++) {
+                            if(x%2 == 0) {
+                              sum2 += x;
+                            }
+                          }
+                          
+                          System.out.println("1-100偶数之和是："+sum2);
+                          System.out.println("------------------");
+                          
+                          //方式2
+                          int sum3 = 0;
+                          
+                          for(int x=0; x<=100; x+=2) {
+                              sum3 += x;
+                          }
+                          
+                          System.out.println("1-100偶数之和是："+sum3);
+                          System.out.println("------------------");
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>4
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：求5的阶乘。                        
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo5 {
+                        public static void main(String[] args) {
+                          //定义最终结果变量
+                          int jc = 1;
+                          
+                          for(int x=2; x<=5; x++) {
+                            jc *=x;
+                          }
+                          
+                          System.out.println("1-5的阶乘是："+jc);
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>5
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：在控制台输出所有的”水仙花数”
+	
+                    	分析：
+                    		水仙花数：一个三位数，各位数字的立方和等于该数本身。
+                    		举例：153就是一个水仙花数。
+                    		153 = 1*1*1 + 5*5*5 + 3*3*3 = 1 + 125 + 27 = 153
+
+                    		1.三位数其实是告诉了我们范围。
+                    		2.通过for循环我们就可以实现获取每一个三位数
+                    		  但是麻烦是如何获取这个三位数的个,十,百位上的数据
+
+                    		  我们如何获取一个数据的个,十,百呢?
+                    			假设有个一个数据:153
+                    			ge:	153%10 = 3
+                    			shi: 153/10%10 = 5
+                    			bai：153/10/10%10 = 1
+                    			qian：x/10/10/10%10
+                    			wan:  x/10/10/10/10%10
+                    			...
+
+                    		3.让ge*ge*ge+shi*shi*shi+bai*bai*bai和该数据比较
+                    		4.如果相同，就把该数据在控制台输出。
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo6 {
+                      	public static void main(String[] args) {
+                        
+                      		for(int x=100; x<1000; x++) {
+                      			int ge = x%10;
+                      			int shi = x/10%10;
+                      			int bai = x/10/10%10;
+                          
+                      			if(x == (ge*ge*ge+shi*shi*shi+bai*bai*bai)) {
+                      				System.out.println(x);
+                      			}
+                      		}
+                      	}
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<hr>6
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      练习：
+                      请在控制台输出满足如下条件的五位数
+                      个位等于万位
+                      十位等于千位
+                      个位+十位+千位+万位=百位
+                      
+                    分析：
+                      1.五位数就告诉了我们范围。
+                      2.分解每一个五位数的个，十，百，千，万位上的数据
+                      3.按照要求进行判断                   
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo7 {
+                        public static void main(String[] args) {
+                          //五位数就告诉了我们范围。
+                          for(int x=10000; x<100000; x++) {
+                            //分解每一个五位数的个，十，百，千，万位上的数据
+                            int ge = x%10;
+                            int shi = x/10%10;
+                            int bai  = x/10/10%10;
+                            int qian = x/10/10/10%10;
+                            int wan = x/10/10/10/10%10;
+                            
+                            //按照要求进行判断
+                            if((ge==wan) && (shi==qian) && (ge+shi+qian+wan==bai)) {
+                              System.out.println(x);
+                            }
+                          }
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>7
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                    	需求：统计”水仙花数”共有多少个
+
+                    	分析：
+                    		1.水仙花数：一个三位数，其各位数字的立方和等于该数本身。
+                    			举例：153就是一个水仙花数。
+                    			153 = 1*1*1 + 5*5*5 + 3*3*3 = 1 + 125 + 27 = 153
+                    		2.定义统计变量，初始化值是0
+                    		3.三位数告诉了我们范围，用for循环
+                    		4.获取每一个三位数的个，十，百位的数据
+                    		5.按照要求进行判断
+                    		6.如果满足要求就计数
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo8 {
+                        public static void main(String[] args) {
+                          //定义统计变量，初始化值是0
+                          int count = 0;
+                          
+                          //三位数告诉了我们范围，用for循环就可以搞定
+                          for(int x=100; x<1000; x++) {
+                            //获取每一个三位数的个，十，百的数据
+                            int ge = x%10;
+                            int shi = x/10%10;
+                            int bai = x/10/10%10;
+                            
+                            //按照要求进行判断
+                            if(x == (ge*ge*ge+shi*shi*shi+bai*bai*bai)) {
+                              //如果满足要求就计数。
+                              count++;
+                            }
+                          }
+                          
+                          System.out.println("水仙花数共有"+count+"个");
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<hr>8
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：统计1-1000之间同时满足如下条件的数据有多少个：
+                            对3整除余2
+                            对5整除余3
+                            对7整除余2
+                
+                      分析：
+                            1.定义统计变量,初始化值是0
+                            2.1-1000之间是一个范围，用for很容易就可以实现。
+                            3.每个数据要同时满足如下要求
+                                x%3==2
+                                x%5==3
+                                x%7==2
+                            4.如果满足条件，统计数据++即可，最后输出统计变量
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForDemo9 {
+                        public static void main(String[] args) {
+                          //定义统计变量,初始化值是0
+                          int count = 0;
+                        
+                          //1-1000之间是一个范围，用for很容易就可以实现。
+                          for(int x=1; x<=1000; x++) {
+                            if(x%3==2 && x%5==3 && x%7==2) {
+                              count++;
+                              System.out.println(x);
+                            }
+                          }
+                          
+                          //输出数据
+                          System.out.println("满足这样条件的数据共有："+count+"个");
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>循环结构while</legend>
+          </fieldset>
+
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    while循环的基本格式：
+                    while(判断条件语句) {
+                      循环体语句;
+                    }
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class WhileDemo {
+                      public static void main(String[] args) {
+                        //输出10次"HelloWorld"
+                        //for语句版
+                        for(int x=0; x<10; x++) {
+                          System.out.println("HelloWorld");
+                        }
+                        System.out.println("--------------");
+                        //while语句版
+                        int x=0;
+                        while(x<10) {
+                          System.out.println("HelloWorld");
+                          x++;
+                        }
+                        
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>1
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：求出1-100之和
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class WhileDemo2 {
+                        public static void main(String[] args) {
+                          //求出1-100之和
+                          //for语句版本
+                          int sum = 0;
+                          
+                          for(int x=1; x<=100; x++) {
+                            sum+=x;
+                          }
+                          
+                          System.out.println("sum:"+sum);
+                          System.out.println("--------");
+                          //while语句版本
+                          int sum2 = 0;
+                          
+                          int y=1;
+                          while(y<=100) {
+                            sum2+=y;
+                            y++;
+                          }
+                          
+                          System.out.println("sum2:"+sum2);
+                          System.out.println("--------");
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+<hr>2
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：统计水仙花数有多少个
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class WhileDemo3 {
+                        public static void main(String[] args) {
+                          //for循环版本
+                          int count = 0;
+                          
+                          for(int x=100; x<1000; x++) {
+                            int ge = x%10;
+                            int shi = x/10%10;
+                            int bai = x/10/10%10;
+                            
+                            if((ge*ge*ge+shi*shi*shi+bai*bai*bai) == x) {
+                              count++;
+                            }
+                          }
+                          
+                          System.out.println("count:"+count);
+                          System.out.println("------------");
+                          
+                          //while循环版本
+                          int count2 = 0;
+                          
+                          int y = 100;
+                          while(y<1000) {
+                            int ge = y%10;
+                            int shi = y/10%10;
+                            int bai = y/10/10%10;
+                            
+                            if((ge*ge*ge+shi*shi*shi+bai*bai*bai) == y) {
+                              count2++;
+                            }
+                            
+                            y++;
+                          }
+                          
+                          System.out.println("count2:"+count2);
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>3
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      while循环和for循环的适用场景?
+		                      1.如果想在循环结束后，继续使用控制条件的那个变量，用while循环，否则用for循环。不知道用for循环。
+		                      2.知道遍历范围，用for循环；不知道用while循环
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class WhileDemo4 {
+                        public static void main(String[] args) {
+                          //for循环实现
+                          for(int x=0; x<10; x++) {
+                            System.out.println("学习Java技术哪家强,中国北京传智播客");
+                          }
+                          //这里不能在继续访问了
+                          //System.out.println(x);
+                          
+                          //while循环实现
+                          int y = 0;
+                          while(y<10) {
+                            System.out.println("学习Java技术哪家强,中国北京传智播客");
+                            y++;
+                          }
+                          //这里是可以继续访问的
+                          System.out.println(y);
+                        }
+                      } 
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>4
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：
+                      我国最高山峰是珠穆朗玛峰：8848m，我现在有一张足够大的纸张，厚度为：0.01m。
+                      请问，我折叠多少次，就可以保证厚度不低于珠穆朗玛峰的高度?
+                    
+                      分析：
+                        1.定义一个统计变量，默认值是0
+                        2.最高山峰是珠穆朗玛峰：8848m这是最终的厚度
+                             我现在有一张足够大的纸张，厚度为：0.01m这是初始厚度
+                        3.折叠一次，厚度是上一次的2倍。
+                        4.只要每次变化的厚度没有超过珠穆朗玛峰的高度，就折叠，统计变量++
+                        5.输出统计变量。
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class WhileDemo5 {
+                        public static void main(String[] args) {
+                          //定义一个统计变量，默认值是0
+                          int count = 0;
+                          
+                          int end = 884800;
+                          int start = 1;
+                          
+                          while(start<end) {
+                            //只要每次变化的厚度没有超过珠穆朗玛峰的高度，就折叠，统计变量++
+                            count++;
+                            
+                            //折叠一次，厚度是以前的2倍
+                            start *= 2;
+                            
+                            System.out.println("第"+count+"次厚度是"+start);
+                          }
+                          
+                          //输出统计变量
+                          System.out.println("要叠"+count+"次");
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>循环结构do-while</legend>
+          </fieldset>
+
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    do...while循环的基本格式：
+                        do {
+                          循环体语句;
+                        }while(判断条件语句);
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class DoWhileDemo {
+                      public static void main(String[] args) {
+                        //输出10次HelloWorld。
+                        int x = 0;
+                        do {
+                          System.out.println("HelloWorld");
+                          x++;
+                        }while(x<10);
+                        
+                        System.out.println("--------------");
+                        
+                        //求和1-100
+                        int sum = 0;
+                        int a = 1;
+                        do {
+                          sum += a;
+                          a++;
+                        }while(a<=100);
+                        
+                        System.out.println(sum);
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    循环语句的区别:
+                        do...while：至少执行一次循环体。
+                        for,while循环：必须先判断条件是否成立，然后决定是否执行循环体语句。
+                    
+                    我们一般使用哪种循环呢?
+                        优先考虑for，其次考虑while，最后考虑do...while
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class DoWhileDemo2 {
+                      public static void main(String[] args) {
+                        int x = 3;
+                        while(x < 3) {
+                          System.out.println("我爱林青霞");
+                          x++;
+                        }
+                        
+                        System.out.println("--------------");
+                        
+                        int y = 3;
+                        do {
+                          System.out.println("我爱林青霞");
+                          y++;
+                        }while(y < 3);
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+<hr>
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    注意死循环：
+                        1.控制条件语句的变量的不要弄丢了，否则就容易死循环。
+                        2.两种最简单的死循环格式
+                            while(true){...}
+                            for(;;){...}
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class DoWhileDemo3 {
+                      public static void main(String[] args) {
+                        int x = 0;
+                        while(x < 10) {
+                          System.out.println(x);
+                          x++;
+                        }
+                        System.out.println("--------------");
+                        
+                        /*
+                        死循环
+                        while(true) {
+                          System.out.println("今天我很高兴，学习了死循环");
+                        }
+                        */
+                        
+                        /*
+                        死循环
+                        for(;;){
+                          System.out.println("今天我很高兴，学习了死循环");
+                        }
+                        */
+                        
+                      }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend>循环嵌套</legend>
+          </fieldset>
+
+<hr>1
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      需求：请输出一个4行5列的星星(*)图案。
+                      结果：
+                        *****
+                        *****
+                        *****
+                        *****
+                        
+                      循环嵌套：循环中还有循环.
+                      
+                      结论：
+                        外循环控制行数
+                        内循环控制列数
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForForDemo {
+                        public static void main(String[] args) {
+                          //原始做法
+                          System.out.println("*****");
+                          System.out.println("*****");
+                          System.out.println("*****");
+                          System.out.println("*****");
+                          System.out.println("-------------");
+                          
+                          //嵌套循环改进
+                          for(int y=0; y<4; y++) {
+                            for(int x=0; x<5; x++) {
+                              System.out.print("*");
+                            }
+                            //我们可以通过空的输出语句实现换行：System.out.println();
+                            System.out.println();
+                          }
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>2
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      需求：请输出下列的形状
+                      *
+                      **
+                      ***
+                      ****
+                      *****
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForForDemo2 {
+                        public static void main(String[] args) {
+                          //通过简单的观察，我们看到这是一个行是5，列数是变化的形状
+                          //我们先打印出一个5行5列的形状
+                          for(int x=0; x<5; x++) {
+                            for(int y=0; y<5; y++) {
+                              System.out.print("*");
+                            }
+                            System.out.println();
+                          }
+                          
+                          System.out.println("--------------");
+                          
+                          //我们实现了一个5行5列的形状
+                          //但是这不是我们想要的
+                          //我们要的是列数变化的
+                          //列数是如何变化的呢?
+                          //第一行：1列	y=0,y<=0,y++
+                          //第二行：2列	y=0,y<=1,y++
+                          //第三行：3列	y=0,y<=2,y++
+                          //第四行：4列	y=0,y<=3,y++
+                          //第五行：5列	y=0,y<=4,y++
+                          //在看外循环x的变化，恰好就是x=0,1,2,3,4
+                          //所以这个最终版的程序就是如下
+                          for(int x=0; x<5; x++) {
+                            for(int y=0; y<=x; y++) {
+                              System.out.print("*");
+                            }
+                            System.out.println();
+                          }
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+<hr>3
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">练习</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      案例：在控制台输出九九乘法表。
+	
+                      九九乘法表：
+                        1*1=1
+                        1*2=2	2*2=4
+                        1*3=3	2*3=6	3*3=9
+                        1*4=4	2*4=8	3*4=12	4*4=16
+                        ...
+                        1*9=9	2*9=18	3*9=27	...
+                        
+                      我们先把这个九九乘法表看出是这样的一个形状：
+                        *
+                        **
+                        ***
+                        ****
+                        *****
+                        ******
+                        *******
+                        ********
+                        *********
+                        
+                      注意：
+                        '\x' x表示任意，这种做法叫转义字符。
+                        
+                        '\t'	tab键
+                        '\r'	回车
+                        '\n'	换行
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">答案</div>
+                  <div class="layui-card-body">
+                    <pre>
+                      class ForForDemo3 {
+                        public static void main(String[] args) {
+                          for(int x=0; x<9; x++) {
+                            for(int y=0; y<=x; y++) {
+                              System.out.print("*");
+                            }
+                            System.out.println();
+                          }
+                          System.out.println("--------------");
+                          //为了使用数据，我们从1开始
+                          for(int x=1; x<=9; x++) {
+                            for(int y=1; y<=x; y++) {
+                              System.out.print(y+"*"+x+"="+y*x+"\t");
+                            }
+                            System.out.println();
+                          }
+                        }
+                      }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
 </body>
 

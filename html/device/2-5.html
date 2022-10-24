@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="../lib/layui-v2.5.5/css/layui.css" media="all">
+<link rel="stylesheet" href="../../css/coom.css">
+<body>
+  <fieldset class="layui-elem-field layui-field-title" style="margin-top: 20px;">
+    <legend><h1 align="center">方法</h1></legend>
+  </fieldset> 
+          <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+            <legend></legend>
+          </fieldset>
+
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+            <div class="box"><b></b></div>
+          </blockquote>
+          
+
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    方法：完成特定功能的代码块。其它语言中也称为函数。
+                	方法格式：
+                		修饰符 返回值类型 方法名(参数类型 参数名1,参数类型 参数名2...) {
+                			方法体语句;
+                			return 返回值; 
+                		}
+                	解释：
+                		修饰符：
+                		返回值类型：返回数据的类型。
+                		方法名：驼峰原则；见名知意
+                		参数：
+                			实际参数：实际参与运算。
+                			形式参数；小括号里面的。用于定义函数，接收实际参数。
+                		参数类型：参数的数据类型
+                		参数名：变量名
+                		方法体语句：完成功能的代码。
+                		return：方法结束的标志。
+                		返回值：就是功能的结果，由return带给调用者。
+                    
+                	调用函数
+                		1.单独调用：没有意义，不推荐。
+                		2.输出调用：不够好，有时需要对结果进一步操作。
+                		3.赋值调用：推荐。
+                    
+                	需求：求两个数据之和
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class FunctionDemo {
+                        public static void main(String[] args) {
+                            int x = 10;
+                            int y = 20;
+                            
+                            //方式1：单独调用
+                            //sum(x,y);
+                        
+                            //方式2：输出调用
+                            //System.out.println(sum(x,y));
+                            //System.out.println(30);
+                        
+                            //方式3：赋值调用
+                            int result = sum(x,y);
+                            System.out.println(result);
+                        }
+                        
+                        
+                        //求两个数据之和
+                        public static int sum(int a,int b) {
+                                return a + b;
+                        }
+                        
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    方法的注意事项：
+		                1.不调用不执行
+		                2.不同的方法地位平等，不能嵌套定义
+		                3.定义方法时，形式参数用逗号隔开
+		                4.如果方法有明确的返回值，一定要return
+		                5.定义和调用的区别：定义——有返回值类型，调用——没有
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class FunctionDemo2 {
+                        public static void main(String[] args) {
+                            int x = 10;
+                            int y = 20;
+                            
+                            //错误，调用不应该有返回值类型
+                            //sum(int x,int y);
+                            
+                            //正确
+                            sum(10,20);
+                            
+                            
+                            
+                        }
+                        
+                        public static int sum(int a, int b){
+                            return a + b;
+                        }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    案例：在控制台输出如下的形状
+                		*****
+                		*****
+                		*****
+                		*****
+                                
+                	void类型返回值的方法调用：
+                		单独调用
+                		输出调用(错误)
+                		赋值调用(错误)
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class FunctionDemo3 {
+                        public static void main(String[] args) {
+                            //for循环嵌套输出图形
+                            for(int x=0; x<4; x++) {
+                                for(int y=0; y<5; y++) {
+                                    System.out.print("*");
+                                }
+                                System.out.println();
+                            }
+                            System.out.println("--------------");
+                            
+                            //需求：我要在控制台输出一个6行7列的星形图形
+                            for(int x=0; x<6; x++) {
+                                for(int y=0; y<7; y++) {
+                                    System.out.print("*");
+                                }
+                                System.out.println();
+                            }
+                            System.out.println("--------------");
+                            
+                    
+                            //单独调用
+                            pringXing(3,4);
+                            System.out.println("--------------");
+                            pringXing(6,7);
+                            System.out.println("--------------");
+                            pringXing(8,9);
+                            
+                            //输出调用
+                            //此处不允许使用 '空' 类型
+                            //System.out.println(pringXing(3,4));
+                            
+                            //赋值调用
+                            //非法的表达式开始
+                            //void v = pringXing(3,4);
+                        }
+                        
+                        /*
+                            写一个什么样子的方法呢?写一个m行n列的代码
+                            
+                            两个明确：
+                                返回值类型：这个时候没有明确的返回值，不写东西还不行，所以，这里记住是void
+                                参数列表：int m,int n
+                        */
+                        public static void pringXing(int m,int n) {
+                            for(int x=0; x<m; x++) {
+                                for(int y=0; y<n; y++) {
+                                    System.out.print("*");
+                                }
+                                System.out.println();
+                            }
+                        }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+          <hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    案例：求和
+	
+                	方法重载：在同一个类中，方法名相同，参数列表不同。与返回值类型无关，与变量名无关。
+                		参数列表不同：
+                			1.参数个数不同
+                			2.参数类型不同
+                	其它相同，返回值类型不同：是两个函数，不是函数重载。
+                	其它相同，变量名不同：是同一个函数，不是函数重载。
+                  </pre>
+                </div>   
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-panel">
+                  <pre>
+                    class FunctionDemo4 {
+                        public static void main(String[] args) {
+                            //jvm会根据不同的参数去调用不同的功能
+                            System.out.println(sum(10,20));
+                            System.out.println(sum(10,20,30));
+                            System.out.println(sum(10,20,30,40));
+                            
+                            System.out.println(sum(10.5f,20f));
+                        }
+                        
+                        //需求1:求两个数的和
+                        public static int sum(int a,int b) {
+                            System.out.println("int");
+                            return a + b;
+                        }
+                        
+                        //需求2:求三数的和
+                        public static int sum(int a,int b,int c) {
+                            return a + b + c;
+                        }
+                        
+                        //需求3:求四个数的和
+                        public static int sum(int a, int b, int c, int d) {
+                            return a + b + c + d;
+                        }
+                        
+                        public static float sum(float a,float b) {
+                            System.out.println("float");
+                            return a + b;
+                        }
+                    }
+                  </pre>
+                </div>   
+              </div>
+            </div> 
+          </div>
+
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">案例一</div>
+                  <div class="layui-card-body">
+                    <pre>
+                        案例：键盘录入两个数据，返回较大值
+                        <hr>
+                    import java.util.Scanner;
+
+                    class FunctionTest {
+                    	public static void main(String[] args) {
+                    		//创建键盘录入对象
+                    		Scanner sc = new Scanner(System.in);
+                        
+                    		System.out.println("请输入第一个数据:");
+                    		int a = sc.nextInt();
+                        
+                    		System.out.println("请输入第二个数据:");
+                    		int b = sc.nextInt();
+                        
+                    		int result = getMax(a,b);
+                    		System.out.println("较大值是："+result);
+                    	}
+                    
+                    	/*
+                    		需求：两个数中的较大值
+                    		两个明确：
+                    			返回值类型：int
+                    			参数列表：int a,int b			
+                    	*/
+                    	public static int getMax(int a,int b) {
+                    		return ((a>b)? a : b);
+                    	}
+                    }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">例二</div>
+                  <div class="layui-card-body">
+                    <pre>
+                        需求：键盘录入两个数据，比较是否相等
+	                分析：比较两个数是否相等结果是一个boolean类型。
+        <hr>
+                import java.util.Scanner;
+
+                class FunctionTest2 {
+                    public static void main(String[] args) {
+                        //创建键盘录入对象
+                        Scanner sc = new Scanner(System.in);
+
+                        System.out.println("请输入第一个数据:");
+                        int a = sc.nextInt();
+
+                        System.out.println("请输入第二个数据:");
+                        int b = sc.nextInt();
+
+                        boolean flag = compare(a,b);
+                        System.out.println(flag);
+                    }
+
+                    /*
+                        需求：比较两个数是否相等
+                        两个明确：
+                            返回值类型：boolean
+                            参数列表：int a, int b
+                    */
+                    public static boolean compare(int a,int b) {
+                        return a == b;
+                    }
+                }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+3
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">案例3</div>
+                  <div class="layui-card-body">
+                    <pre>
+                        需求：键盘录入三个数据，返回三最大值
+                        <hr>
+                        import java.util.Scanner;
+
+                        class FunctionTest3 {
+                            public static void main(String[] args) {
+                                //创建键盘录入对象
+                                Scanner sc = new Scanner(System.in);
+                                
+                                System.out.println("请输入第一个数据:");
+                                int a = sc.nextInt();
+                                
+                                System.out.println("请输入第二个数据:");
+                                int b = sc.nextInt();
+                                
+                                System.out.println("请输入第三个数据:");
+                                int c = sc.nextInt();
+                                
+                                int max = getMax(a,b,c);
+                                System.out.println("三个数据中的最大值是："+max);
+                            }
+                            
+                            /*
+                                需求；返回三个数中的最大值
+                                
+                                两个明确：
+                                    返回值类型：int
+                                    参数列表：int a,int b,int c
+                            */
+                            public static int getMax(int a,int b,int c) {
+                                
+                                //return (a>b)? (a>c? a: c): (b>c? b: c);
+                                //不建议，写代码一定要注意阅读性强
+                                int temp = ((a>b)? a: b);
+                                int max = ((temp>c)? temp: c);
+                                return max;
+                            }
+                        }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">例4</div>
+                  <div class="layui-card-body">
+                    <pre>
+                        需求：键盘录入行数和列数，输出对应的星形
+        <hr>
+                import java.util.Scanner;
+
+                class FunctionTest4 {
+                    public static void main(String[] args) {
+                        //创建键盘录入对象
+                        Scanner sc = new Scanner(System.in);
+
+                        System.out.println("请输入行数：");
+                        int m = sc.nextInt();
+
+                        System.out.println("请输入列数：");
+                        int n = sc.nextInt();
+
+                        //void类型的方法调用
+                        pringXing(m,n);
+                    }
+
+                    /*
+                        输出星形
+
+                        两个明确：
+                            返回值类型：void
+                            参数列表：int m,int n
+                    */
+                    public static void pringXing(int m, int n) {
+                        for(int x=0; x<m; x++) {
+                            for(int y=0; y<n; y++) {
+                                System.out.print("*");
+                            }
+                            System.out.println();
+                        }
+                    }
+                }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+5
+<hr>
+
+          <div class="layui-bg-gray" style="padding: 30px;">
+            <div class="layui-row layui-col-space15">
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">案例5</div>
+                  <div class="layui-card-body">
+                    <pre>
+                        键盘录入一个数据n(1~9)，输出对应的乘法表
+                        <hr>
+                        import java.util.Scanner;
+
+                        class FunctionTest5 {
+                            public static void main(String[] args) {
+                                //创建对象
+                                Scanner sc = new Scanner(System.in);
+                                
+                                System.out.println("请输入n的值(1~9)：");
+                                int n = sc.nextInt();
+                                
+                                //调用
+                                printNN(n);
+                            }
+                            
+                            /*
+                                需求：输出对应的nn乘法表
+                                两个明确：
+                                    返回值类型：void
+                                    参数列表：int n
+                            */
+                            public static void printNN(int n) {
+                                for(int x=1; x<=n; x++) {	//外循环控制行
+                                    for(int y=1; y<=x; y++) {	//内循环控制列
+                                        System.out.print(y + "*" + x + "=" + y*x + "\t");
+                                    }
+                                    System.out.println();
+                                }
+                            }
+                        }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+              <div class="layui-col-md6">
+                <div class="layui-card">
+                  <div class="layui-card-header">例6</div>
+                  <div class="layui-card-body">
+                    <pre>
+                        比较两个数据是否相等。参数类型分别为
+                    		两个byte类型，两个short类型，两个int类型，两个long类型，
+                    	并在main方法中进行测试
+        <hr>
+                    class FunctionTest6 {
+                        public static void main(String[] args) {
+                            //测试
+                            byte b1 = 3;
+                            byte b2 = 4;
+                            System.out.println("byte:"+compare(b1,b2));
+                            
+                            //测试
+                            short s1 = 5;
+                            short s2 = 5;
+                            System.out.println("short:"+compare(s1,s2));
+                            
+                            //测试
+                            int i1 = 3;
+                            int i2 = 4;
+                            System.out.println("byte:"+compare(i1,i2));
+                            
+                            //测试
+                            long L1 = 3;
+                            long L2 = 4;
+                            System.out.println("byte:"+compare(L1,L2));
+                            
+                        }
+                        
+                        //byte类型
+                        public static boolean compare(byte a,byte b) {
+                            System.out.println("byte");
+                            return a == b;
+                        }
+                        
+                        //short类型
+                        public static boolean compare(short a,short b) {
+                            System.out.println("short");
+                            return a == b;
+                        }
+                        
+                        //int类型
+                        public static boolean compare(int a,int b) {
+                            System.out.println("int");
+                            return a == b;
+                        }
+                        
+                        //long类型
+                        public static boolean compare(long a,long b) {
+                            System.out.println("long");
+                            return a == b;
+                        }
+                    }
+                    </pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+</body>
+
+</html>

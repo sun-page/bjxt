@@ -48,8 +48,8 @@
       <div class="layui-panel">
         <div style="padding: 10px 10px;">
           <pre>
-            float 
-            double
+                      float                           4                        ···
+                      double                       8                        ···
           </pre>
         </div>
       </div>   
@@ -65,8 +65,11 @@
       <div class="layui-panel">
         <div style="padding: 10px 10px;">
           <pre>
-            decimal(M.D) 
-  
+                      decimal(M.D)
+                                  ##  通过此设置位数和长度。
+                                              M表示数字总和位数（不包括“.”和“-”）最大值65，默认值10。
+                                              D表示小数点后的位数，最大值30，默认值0。
+                                              例如 DECIMAL(5,2),表示范围在-999.99~999.99
           </pre>
         </div>
       </div>   
@@ -83,7 +86,7 @@
       <div class="layui-panel">
         <div style="padding: 10px 10px;">
           <pre>
-            BIT(M)
+            BIT(M)    用于存放二进制数据，语法为BIT(M),M表示位数，范围为1~64
           </pre>
         </div>
       </div>   
@@ -99,11 +102,12 @@
       <div class="layui-panel">
         <div style="padding: 10px 10px;">
           <pre>
-            YEAR 
-            DATE
-            TIME
-            DATETIME
-            TIMESTAMP
+            数据类型                取值范围                                                                日期格式                    零值
+            YEAR                 1901~2155                                                                  YYYY                      0000
+            DATE                 1000-01-01~9999-12-3                                              YYYY-MM-DD        0000-00-00
+            TIME                 -838:59:59~838:59:59                                                 HH:MM:SS              00:00:00
+            DATETIME        1000-01-01 00:00:00~9999-12-31 23:59:59
+            TIMESTAMP     1970-01-01 00:00:01~2038-01-19 03:14:07
           </pre>
         </div>
       </div>   
@@ -119,14 +123,14 @@
       <div class="layui-panel">
         <div style="padding: 10px 10px;">
           <pre>
-            CHAR
-            VARCHAR
-            TEXT
-            ENUM
-            SET
-            BINARY
-            VARBINARY
-            BLOB
+            CHAR                  固定长度字符串
+            VARCHAR           可变长度字符串
+            TEXT                   大文本数据
+            ENUM                 枚举类型
+            SET                      字符串对象
+            BINARY               固定长度的二进制数据
+            VARBINARY        可变长度的二进制数据
+            BLOB                  二进制大对象（Binary Large Object）
           </pre>
         </div>
       </div>   
@@ -162,6 +166,27 @@
 </div>
 
 
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend>表的约束</legend>
+</fieldset>
+
+
+
+
+
+8
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>字符集与校对集</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">
+          ##
+        </div>
+      </div>   
+  </div> 
+</div>
 
 </body>
 

@@ -13,7 +13,7 @@
     <legend><h1 align="center">第五章单表操作</h1></legend>
   </fieldset> 
           <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-            <legend>数据操作</legend>
+            <legend>1数据操作</legend>
           </fieldset>
 
 1
@@ -24,6 +24,7 @@
             <div class="layui-row layui-col-space15">
                 <div class="layui-panel">
                   <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>create [temporary] table [if not exists]表名 {like 旧表名| (like 旧表名)} </b></div>
+                  <div style="padding: 10px 10px;">## 把sh_goods表结构复制到mydb数据库的my_goods数据库 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>create table mydb.my_goods like sh_goods;</b></div>
                 </div>   
             </div> 
           </div>
@@ -38,6 +39,7 @@
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
         <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>insert [into] 数据表名1 [(字段列表)] select [(字段列表)] from 数据表名2; </b></div>
+        <div style="padding: 10px 10px;">## 将sh_goods表数据复制到my_goods表 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>insert into mydb.my_goods select * from sh_goods; </b></div>
       </div>   
   </div> 
 </div>
@@ -50,6 +52,7 @@
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
         <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>insert [into] 数据表名 [(字段列表)] {values | value} (值列表) on duplicate key update 字段名1 = 新值1[,字段名2=新值2]...;</b></div>
+        <div style="padding: 10px 10px;">## 通过设置对应的字段名对应的新值更新记录 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>insert into mudb.my_goods (id,name,content,keyword) values (20,'橡皮','修正书写错误','文具') on duplicate key update name = '橡皮',content='修正书写错误' ,keyword='文具';</b></div>
       </div>   
   </div> 
 </div>
@@ -63,6 +66,7 @@
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
         <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>replace [into] 数据表名 [(字段列表)] {values|value} (值列表) [,(值列表)]...;</b></div>
+        <div style="padding: 10px 10px;">## 当发生主键冲突，则删除此条记录，并重新插入值 ## 通过设置对应的字段名对应的新值更新记录 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>replace into mudb.my_goods (id,name,content,keyword) values (20,'橡皮','修正书写错误','文具');</b></div>
       </div>   
   </div> 
 </div>
@@ -103,13 +107,14 @@
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
         <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select (all|distinct) 字段列表 from 数据表; </b></div>
+        <div style="padding: 10px 10px;">## 查看sh_goods表中去除重复记录的keyword字段值 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select distinct keyword from sh_goods; </b></div>
       </div>   
   </div> 
 </div>
 
 
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-  <legend>排序与限量 order by.limit</legend>
+  <legend>2排序与限量 order by.limit</legend>
 </fieldset>
 
 7
@@ -119,7 +124,8 @@
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
-        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select * | {字段列表} from 数据表名 order by 字段名 [<span title="升序">asc</span> | <span title="降序">desc</span>];</b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select * | {字段列表} from 数据表名 order by 字段名 [<span title="升序（默认排序）">asc</span> | <span title="降序">desc</span>];</b></div>
+        <div style="padding: 10px 10px;">## 按照商品价格降序排列 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select id,name,price  from sh_goods order by price  <span title="降序">desc</span>;</b></div>
       </div>   
   </div> 
 </div>
@@ -132,6 +138,7 @@
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
         <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select * | {字段列表} from 数据表名 order by 字段名1 [<span title="升序">asc</span> | <span title="降序">desc</span>] [,字段名2 [<span title="升序">asc</span> | <span title="降序">desc</span>]]···;</b></div>
+        <div style="padding: 10px 10px;">## 按照字段一进行排序，如果字段一值相同，按照字段二降序 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select category_id,id,name,price from sh_goods order by category_id , price <span title="降序">desc</span>;</b></div>
       </div>   
   </div> 
 </div>
@@ -139,12 +146,14 @@
 
 9
 <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>多字段排序</b></div>
+  <div class="box"><b>限量</b></div>
 </blockquote>
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
         <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [ select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  [ order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span>] limit [ <span title="表示从那一条字段开始">offset</span> , ] 记录数;</b></div>
+        <div style="padding: 10px 10px;">## 按照价格排序，限制查询第一条记录 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select id,name,price from sh_goods order by price <span title="降序">desc</span> limit 1;</b></div>
+        <div style="padding: 10px 10px;">## 从第一条记录开始，获取五条记录 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select id,name,price from sh_goods limit 0,5;</b></div>
       </div>   
   </div> 
 </div>
@@ -159,23 +168,149 @@
       <div class="layui-panel">
         <div style="padding: 10px 10px;">## 数据更新的排序限量&nbsp;&nbsp;&nbsp;&nbsp;<b>update 数据表名 set 字段=新值,···  [ where 条件表达式 ]  order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span> limit  记录数;</b></div>
         <div style="padding: 10px 10px;">## 数据删除的排序限量&nbsp;&nbsp;&nbsp;&nbsp;<b>delete from 数据表名  [ where 条件表达式 ]  order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span> limit  记录数;</b></div>
+        <div style="padding: 10px 10px;">## 数据更新的排序限量&nbsp;&nbsp;&nbsp;&nbsp;<b>update sh_goods set stock=500 order by price  <span title="升序">asc</span> limit 2;</b></div>
 
       </div>   
   </div> 
 </div>
 
 <fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
-  <legend>分组与聚合函数</legend>
+  <legend>3分组与聚合函数</legend>
 </fieldset>
 
 11
 <blockquote class="layui-elem-quote" style="margin-top: 10px;">
-  <div class="box"><b>多字段排序</b></div>
+  <div class="box"><b>分组统计</b></div>
 </blockquote>
 <div class="layui-bg-gray" style="padding: 30px;">
   <div class="layui-row layui-col-space15">
       <div class="layui-panel">
-        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [ select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  [ order by 字段  <span title="升序">asc</span> |  <span title="降序">desc</span>] limit [ <span title="表示从那一条字段开始">offset</span> , ] 记录数;</b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  group by 字段名;</b></div>
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select category_id,MAX(price)  from sh_goods   group by category_id;</b></div>
+      </div>   
+  </div> 
+</div>
+
+12
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>分组排序</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  group by 字段名 <span title="升序">asc</span> |  <span title="降序">desc</span>];</b></div>
+        <div style="padding: 10px 10px;">## 对category_id进行排序，查询并显示分组后每组商品id以及name ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select category_id, GROUP_CONCAT(id) ,GROUP_CONCAT(name) from sh_goods  group by category_id <span title="降序">desc</span>;</b></div>
+        
+        group_concat 函数的作用:函数返回一个字符串结果,该结果由分组中的值连接组合而成。
+      </div>   
+  </div> 
+</div>
+
+13
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>多分组统计</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  group by 字段名1 <span title="升序">[asc</span> |  <span title="降序">desc</span>],[,字段名2 <span title="升序">[asc</span> |  <span title="降序">desc</span>]]···;</b></div>
+        <div style="padding: 10px 10px;">## 对sh_goods表，score降序分组后，在以评论数comment_count升序排序，获取商品数量和指定分组下的商品以及对应评论数 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select score,count(*), GROUP_CONCAT(name) ,comment_count  from sh_goods   group by score DESC, comment_count;</b></div>
+      </div>   
+  </div> 
+</div>
+
+14
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b><span title="可以简单理解为在根据指定字段分组后，系统又自动对分组的字段向上进行了一次新的统计并产生一个新数据，且改数据对应的分组字段值为NULL">回溯统计 with rollup</span></b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  group by 字段名1 <span title="升序">[asc</span> |  <span title="降序">desc</span>],[,字段名2 <span title="升序">[asc</span> |  <span title="降序">desc</span>]]···<span>WITH ROLLUP</span>;</b></div>
+        <div style="padding: 10px 10px;">## 对sh_goods表每个分类category_id下的商品数量为例进行回溯统计 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select category_id,count(*) from sh_goods  group by category_id WITH ROLLUP;</b></div>
+        <div style="padding: 10px 10px;">## 多分组回溯统计 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select score,comment_count,count(*) from sh_goods  group by score,comment_count WITH ROLLUP;</b></div>
+      </div>   
+  </div> 
+</div>
+
+15
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>统计筛选 having</b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <pre>
+          where和having的区别
+          *    where操作是从数据表中获取数据，having是对已放到内存中的数据进行操作。
+          **   having位于group by子句之后，where位于group by子句之前
+          *** having关键字后可以使用聚合函数，而where则不可以
+              通常情况下having关键字与group by一起使用，对分组后的结果进行过滤
+        </pre>
+
+        <div style="padding: 10px 10px;">##&nbsp;&nbsp;&nbsp;&nbsp;<b>select [select选项] 字段列表 from 数据表名 [ where 条件表达式 ]  group by 字段名1 <span title="升序">[asc</span> |  <span title="降序">desc</span>], ···[with rollup] having 条件表达式;</b></div>
+        <div style="padding: 10px 10px;">## 获取在score和comment_不同的情况下，含有两件以上的对应商品id ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select score,comment_count,GROUP_CONCAT(id) from sh_goods group by score,comment_count having count(*)>2;</b></div>
+      </div>   
+  </div> 
+</div>
+
+15
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>别名的使用</span></b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <div style="padding: 10px 10px;">## 字段别名 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select 字段1 [as] 别名1,字段2 [as] 别名2,·· from 表名;</b></div>
+        <div style="padding: 10px 10px;">## 表别名 ##&nbsp;&nbsp;&nbsp;&nbsp;<b>select 表别名.字段[,···] from 表名 [as] 表别名;</b></div>
+      </div>   
+  </div> 
+</div>
+
+16
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>聚合函数</span></b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <pre>
+              函数名                              描        述
+            count()                         返回参数字段的数量，不统计bull的记录数
+            sum()                            返回参数字段之和
+            avg()                             返回参数字段的平均值
+            max()                            返回参数字段的最大值
+            min()                             返回参数字段的最小值
+            group_concat()             返回符合条件的参数字段值的链接字符串
+            json_arrayagg()             将符合条件的参数字段值作为单个json数组返回
+            json_objectagg()          将符合条件的参数字段值作为单个json对象返回
+
+
+        </pre>
+      </div>   
+  </div> 
+</div>
+
+<fieldset class="layui-elem-field layui-field-title" style="margin-top: 50px;">
+  <legend>4运算符</legend>
+</fieldset>
+
+17
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>算术运算符</span></b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <pre>
+          运算符                  描述                    示例    
+            +
+            -
+            *
+            /
+            %
+
+        </pre>
       </div>   
   </div> 
 </div>
@@ -183,6 +318,17 @@
 
 
 
-</body>
 
+
+
+
+
+
+
+
+
+
+
+
+</body>
 </html>

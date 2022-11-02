@@ -304,19 +304,63 @@
       <div class="layui-panel">
         <pre>
           运算符                  描述                    示例    
-            +
-            -
-            *
-            /
-            %
+            +                       加                    select 5+2
+            -                        减                    select 5-2
+            *                        乘                    select 5*2
+            /                        除                    select 5/2
+            %                     取模                  select 5%2
+<hr>
+          # 1 # 无符号的加减乘除运算，操作数是无符号整型，运算结果也是无符号整形。
+                      **select id,id+1,id-1,id*2 from sh_goods limit 5;
+          <hr>
+          # 2 # 有符号运算，不能超过数据类型范围。如果操作数为负，那系统就会报错，可以使用强制转换cast(··· as signed),将无符号类型转换为有符号的整数类型。
+                      ** select id-3 from sh_goods limit 5  (id为int类型,若[id-3]为负值,结果会报错。)
+                      ** select cast(id as singned)-3 from sh_goods limit 5;
+          <hr>
+          # 3 # 含有精度的运算，浮点数进行【加减】运算时，结果中的精度等于操作数最大精度。1.2+1.400=2.600
+                   含有精度的运算，浮点数进行【乘除】运算时，结果中的精度等于操作数精度的和。1.2*1.400=1.6800
+                      **
+          <hr>
+          # 4 # "/"运算和div运算。"/" 的结果默认为四位小数;div运算将只保留整数部分
+                      ** select 8/5,8 div 5,0.16/1.2, 0.16 div 1.2;   ## 1.6000   1   0.50000    0
+          <hr>
+          # 5 # null参与加减乘除运算结果都为null
+          <hr>
+          # 6 # mod和"%"都用于取模运算
+          <hr>
+          常用数学公式
 
+          ceil(x)                          #返回大于等于x的最小整数
+          floor(x)                       #返回小于等于x的最大整数
+          format(x,y)                 #返回小数点后保留y位的x（进行四舍五入）
+          round(x[y])                 #计算离x最近的整数；若设置参数y，与format(x,y)功能相同
+          truncate(x,y)              #返回小数点后保留y位的x（舍弃多余的小数，不进行四舍五入）
+          abs(x)                         #获取x的绝对值
+          mod(x,y)                    #求模运算，与x%y的功能相同
+          pi()                             #计算圆周率
+          sqrt(x)                        #求x的平方根
+          pow(x,y)                    #幂运算函数，计算x的y次方，与power(x,y)功能相同
+          rand()                        #默认返回0-1之间的随机数包括0和1
+                                              (min ≤ num ≤ max) -> floor(min + rand()  (max - min))
         </pre>
       </div>   
   </div> 
 </div>
 
 
-
+18
+<blockquote class="layui-elem-quote" style="margin-top: 10px;">
+  <div class="box"><b>比较运算符</span></b></div>
+</blockquote>
+<div class="layui-bg-gray" style="padding: 30px;">
+  <div class="layui-row layui-col-space15">
+      <div class="layui-panel">
+        <pre>
+          
+        </pre>
+      </div>   
+  </div> 
+</div>
 
 
 
